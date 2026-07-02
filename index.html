@@ -3,32 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IMAGYNE</title>
-<!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM3TPMKJR7">
-  // HAMBURGER MENU
-  function toggleMenu() {
-    const nav = document.getElementById('navLinks');
-    const btn = document.getElementById('hamburger');
-    nav.classList.toggle('open');
-    btn.classList.toggle('open');
-  }
-  // Close menu when a link is clicked
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    a.addEventListener('click', () => {
-      document.getElementById('navLinks').classList.remove('open');
-      document.getElementById('hamburger').classList.remove('open');
-    });
-  });
+<title>IMAGYNE — Conseil en Communication, Audiovisuel & Stratégie Médias | Gabon</title>
+<meta name="description" content="IMAGYNE par Junior Yoni Tsango. Accompagnement stratégique, production de contenus à fort impact et solutions médias pour ONG, institutions et entreprises au Gabon.">
 
+<meta property="og:title" content="IMAGYNE — Conseil en Communication & Stratégie Médias">
+<meta property="og:description" content="Production audiovisuelle, communication institutionnelle et accompagnement stratégique au Gabon par Junior Yoni Tsango.">
+<meta property="og:image" content="07287492-f689-468d-bc6b-7eb6292cf883.JPG">
+<meta property="og:url" content="https://imagyne241.com">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IMAGYNE — Conseil en Communication">
+<meta name="twitter:description" content="Solutions de communication et visibilité pour projets à fort impact au Gabon.">
+<meta name="twitter:image" content="07287492-f689-468d-bc6b-7eb6292cf883.JPG">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QM3TPMKJR7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QM3TPMKJR7');
 </script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QM3TPMKJR7');
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600&family=Raleway:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600&family=Raleway:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy: #2b2f5a;
@@ -60,7 +57,6 @@
   .reveal-right { opacity:0; transform:translateX(40px); transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1); }
   .reveal-right.visible { opacity:1; transform:none; }
   .delay-1{transition-delay:.10s} .delay-2{transition-delay:.20s} .delay-3{transition-delay:.30s}
-  .delay-4{transition-delay:.42s} .delay-5{transition-delay:.54s}
 
   /* NAV */
   nav {
@@ -68,6 +64,501 @@
     background:rgba(255,255,255,.94); backdrop-filter:blur(14px);
     border-bottom:1px solid var(--lilac);
     padding:0 5%; display:flex; align-items:center; justify-content:space-between;
+    height:68px; transition:box-shadow .3s;
+  }
+  nav.scrolled { box-shadow:0 4px 32px rgba(43,47,90,.10); }
+  .nav-logo { font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.5rem; letter-spacing:-.02em; color:var(--navy); }
+  .nav-logo span { color:var(--magenta); }
+  .nav-links { display:flex; gap:1.2rem; list-style:none; flex-wrap:nowrap; }
+  .nav-links a { text-decoration:none; font-size:.75rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--violet); position:relative; padding-bottom:4px; transition:color .3s; white-space:nowrap; }
+  .nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--magenta); transition:width .35s cubic-bezier(.22,1,.36,1); }
+  .nav-links a:hover { color:var(--navy); }
+  .nav-links a:hover::after, .nav-links a.active::after { width:100%; }
+  .nav-links a.active { color:var(--navy); }
+
+  .nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; }
+  .nav-hamburger span { display:block; width:24px; height:2px; background:var(--navy); border-radius:2px; transition:all .3s; }
+  .nav-hamburger.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+  .nav-hamburger.open span:nth-child(2) { opacity:0; }
+  .nav-hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+
+  /* HERO */
+  .hero {
+    min-height:100vh; display:flex; align-items:center;
+    padding:100px 5% 60px;
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 45%,var(--violet) 100%);
+    position:relative; overflow:hidden;
+  }
+  .hero::after {
+    content:''; position:absolute; bottom:0; left:32%; width:3px; height:62%;
+    background:linear-gradient(to bottom,transparent,var(--magenta),transparent);
+    transform:rotate(-20deg); transform-origin:bottom center;
+    animation:linePulse 4s ease-in-out infinite;
+  }
+  .hero-inner { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; max-width:1200px; margin:0 auto; width:100%; position:relative; z-index:2; }
+  .hero-text { animation:fadeLeft 1s cubic-bezier(.22,1,.36,1) both; }
+  .hero-tagline { font-family:'Raleway',sans-serif; font-weight:300; font-style:italic; font-size:.95rem; letter-spacing:.22em; color:var(--magenta); margin-bottom:1.2rem; }
+  .hero-text h1 { font-family:'Montserrat',sans-serif; font-weight:900; font-size:clamp(1.6rem,2.8vw,2.8rem); line-height:1.18; color:var(--white); letter-spacing:-.01em; margin-bottom:.6em; }
+  .hero-text h1 em { font-style:italic; color:var(--lavender); display:block; font-size:.85em; margin-top:.3em; font-weight:600; }
+  .hero-bio { color:var(--lilac); font-size:1rem; line-height:1.85; max-width:480px; margin-bottom:2rem; }
+  .hero-bio strong { color:var(--white); font-weight:700; }
+  .hero-cta { display:inline-flex; gap:1rem; flex-wrap:wrap; }
+  .btn { display:inline-block; padding:.78rem 2rem; border-radius:var(--radius-sm); font-family:'Montserrat',sans-serif; font-weight:700; font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; border:none; cursor:pointer; transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s,background .2s; }
+  .btn:hover { transform:translateY(-3px); }
+  .btn-primary { background:var(--magenta); color:var(--white); box-shadow:0 6px 24px rgba(168,85,160,.35); }
+  .btn-primary:hover { background:#8b4090; box-shadow:0 12px 32px rgba(168,85,160,.45); }
+  .btn-outline { background:transparent; color:var(--white); border:2px solid rgba(255,255,255,.35); }
+  .btn-outline:hover { border-color:var(--white); background:rgba(255,255,255,.08); }
+
+  .hero-photo-wrap { display:flex; justify-content:center; align-items:center; position:relative; animation:fadeRight 1s .2s cubic-bezier(.22,1,.36,1) both; }
+  .hero-photo { width:300px; height:370px; object-fit:cover; object-position:top center; border-radius:var(--radius); box-shadow:0 30px 80px rgba(0,0,0,.4); border:3px solid rgba(255,255,255,.18); animation:floatPhoto 6s ease-in-out infinite; }
+  .hero-photo-wrap::before { content:''; position:absolute; width:300px; height:370px; border:2px solid var(--magenta); border-radius:var(--radius); transform:translate(14px,14px); opacity:.45; animation:floatPhoto 6s .5s ease-in-out infinite; }
+
+  /* SECTIONS */
+  section { padding:90px 5%; }
+  .section-label { font-family:'Montserrat',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--magenta); margin-bottom:.5rem; font-style:italic; }
+  .section-title { font-family:'Montserrat',sans-serif; font-weight:900; font-size:clamp(1.8rem,3vw,2.6rem); color:var(--navy); line-height:1.15; margin-bottom:.8rem; letter-spacing:-.02em; }
+  .section-intro { color:var(--text-muted); font-size:1rem; line-height:1.85; max-width:640px; margin-bottom:3rem; }
+  .divider { width:48px; height:3px; background:var(--magenta); border-radius:3px; margin:.9rem 0 2rem; }
+
+  /* ABOUT */
+  #about { background:var(--off-white); }
+  .about-grid { display:grid; grid-template-columns:280px 1fr; gap:4rem; align-items:start; max-width:1100px; margin:0 auto; }
+  .about-photo-col { display:flex; flex-direction:column; align-items:center; gap:2rem; }
+  .about-portrait { width:240px; height:290px; object-fit:cover; object-position:top center; border-radius:var(--radius); box-shadow:0 16px 48px rgba(43,47,90,.18); border:3px solid var(--lilac); display:block; }
+  .about-stats { width:100%; display:flex; flex-direction:column; gap:1rem; }
+  .stat-item { background:var(--white); border-radius:var(--radius-sm); padding:1.2rem 1.4rem; border:1px solid var(--lilac); box-shadow:0 4px 18px rgba(43,47,90,.06); transition:transform .3s,box-shadow .3s; }
+  .stat-item:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(43,47,90,.12); }
+  .stat-num { font-family:'Montserrat',sans-serif; font-size:2rem; font-weight:900; color:var(--navy); }
+  .stat-label { font-size:.8rem; color:var(--text-muted); font-weight:600; margin-top:.2rem; font-style:italic; }
+  .about-text p { color:#444; line-height:1.9; margin-bottom:1.2rem; font-size:1rem; }
+  .about-text p strong { color:var(--navy); font-weight:700; }
+  .quote-block { font-style:italic; color:var(--violet); font-size:.95rem; border-left:3px solid var(--magenta); padding-left:1rem; margin-top:1.5rem; line-height:1.7; }
+  .skills-grid { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.5rem; }
+  .skill-tag { background:var(--white); border:1.5px solid var(--lilac); color:var(--navy); padding:.45rem 1.1rem; border-radius:999px; font-size:.8rem; font-weight:600; font-family:'Montserrat',sans-serif; letter-spacing:.04em; transition:background .2s,border-color .2s,color .2s; cursor:default; }
+  .skill-tag:hover { background:var(--magenta); border-color:var(--magenta); color:var(--white); }
+
+  /* EXPERIENCE */
+  #experience { background:var(--white); }
+  .exp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.6rem; max-width:1200px; margin:0 auto; }
+  .exp-card { background:var(--off-white); border:1px solid var(--lilac); border-radius:var(--radius); overflow:hidden; transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s; box-shadow:0 2px 12px rgba(43,47,90,.05); }
+  .exp-card:hover { transform:translateY(-5px); box-shadow:0 24px 60px rgba(43,47,90,.13); }
+  .exp-accent { height:5px; background:linear-gradient(90deg,var(--navy),var(--magenta)); }
+  .exp-body { padding:1.8rem; }
+  .exp-org { font-size:.7rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--magenta); margin-bottom:.5rem; font-style:italic; }
+  .exp-title { font-family:'Montserrat',sans-serif; font-weight:800; font-size:1.05rem; color:var(--navy); margin-bottom:.7rem; line-height:1.3; }
+  .exp-desc { color:var(--text-muted); font-size:.9rem; line-height:1.75; }
+  .exp-desc strong { color:var(--navy); font-weight:700; }
+
+  /* SERVICES */
+  #services { background:var(--off-white); }
+  .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; max-width:1200px; margin:0 auto; }
+  .service-card { background:var(--white); border:1px solid var(--lilac); border-radius:var(--radius); padding:2rem 1.8rem; box-shadow:0 4px 20px rgba(43,47,90,.06); transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s; position:relative; overflow:hidden; }
+  .service-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,var(--navy),var(--magenta)); }
+  .service-card:hover { transform:translateY(-5px); box-shadow:0 20px 50px rgba(43,47,90,.14); }
+  .service-icon { width:48px; height:48px; background:linear-gradient(135deg,var(--navy),var(--magenta)); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:1.2rem; }
+  .service-icon svg { width:24px; height:24px; fill:var(--white); }
+  .service-name { font-family:'Montserrat',sans-serif; font-weight:800; font-size:1rem; color:var(--navy); margin-bottom:.3rem; }
+  .service-sub { font-size:.75rem; color:var(--magenta); font-weight:700; letter-spacing:.08em; text-transform:uppercase; font-style:italic; margin-bottom:.8rem; }
+  .service-desc { color:var(--text-muted); font-size:.9rem; line-height:1.75; }
+
+  /* BLOG / ANALYSES SECTION */
+  #blog { background: var(--white); }
+  .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+  .blog-card { background: var(--off-white); border: 1px solid var(--lilac); border-radius: var(--radius); overflow: hidden; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s; }
+  .blog-card:hover { transform: translateY(-5px); box-shadow: 0 20px 45px rgba(43,47,90,.12); }
+  .blog-img-wrap { width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--navy-light); }
+  .blog-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+  .blog-card:hover .blog-img-wrap img { transform: scale(1.03); }
+  .blog-body { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+  .blog-meta { font-size: .75rem; color: var(--magenta); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: .6rem; }
+  .blog-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--navy); line-height: 1.4; margin-bottom: .8rem; }
+  .blog-excerpt { color: var(--text-muted); font-size: .9rem; line-height: 1.65; margin-bottom: 1.5rem; flex-grow: 1; }
+  .blog-link { font-family: 'Montserrat', sans-serif; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--navy); display: inline-flex; align-items: center; gap: .4rem; }
+  .blog-card:hover .blog-link { color: var(--magenta); }
+
+  /* PRODUCTIONS */
+  #productions { background:var(--navy); }
+  #productions .section-label { color:var(--lavender); }
+  #productions .section-title { color:var(--white); }
+  #productions .section-intro { color:var(--lavender); }
+  #productions .divider { background:var(--magenta); }
+  .prod-tabs { display:flex; gap:.8rem; margin-bottom:2.5rem; flex-wrap:wrap; }
+  .prod-tab { padding:.6rem 1.6rem; border-radius:999px; border:2px solid rgba(255,255,255,.2); background:transparent; color:var(--lavender); font-family:'Montserrat',sans-serif; font-size:.8rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; transition:all .3s; }
+  .prod-tab:hover { border-color:var(--magenta); color:var(--white); }
+  .prod-tab.active { background:var(--magenta); border-color:var(--magenta); color:var(--white); }
+  .prod-panel { display:none; }
+  .prod-panel.active { display:block; }
+  .productions-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:1.3rem; max-width:1200px; }
+  .prod-card { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); border-radius:var(--radius); overflow:hidden; text-decoration:none; display:block; transition:background .3s,border-color .3s,transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s; }
+  .prod-card:hover { background:rgba(255,255,255,.12); border-color:var(--magenta); transform:translateY(-5px); box-shadow:0 20px 50px rgba(0,0,0,.3); }
+  .prod-thumb-wrap { width:100%; aspect-ratio:16/9; position:relative; overflow:hidden; background:var(--navy-light); }
+  .prod-thumb-wrap img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease; }
+  .prod-play-btn { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,.25); transition:background .3s; }
+  .prod-play-btn svg { width:52px; height:52px; filter:drop-shadow(0 2px 8px rgba(0,0,0,.5)); }
+  .prod-platform-badge { position:absolute; top:10px; right:10px; color:#fff; font-size:.65rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:4px 10px; border-radius:999px; }
+  .prod-platform-badge.yt { background:#ff0000; }
+  .prod-platform-badge.fb { background:#1877f2; }
+  .prod-platform-badge.web { background:var(--magenta); }
+  .prod-info { padding:1.1rem 1.3rem; }
+  .prod-title { font-family:'Montserrat',sans-serif; font-weight:700; font-size:.9rem; color:var(--white); line-height:1.45; margin-bottom:.25rem; }
+  .prod-meta { font-size:.75rem; color:var(--lavender); letter-spacing:.05em; font-style:italic; }
+
+  .infog-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1.3rem; max-width:1200px; }
+  .infog-card { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); border-radius:var(--radius); overflow:hidden; transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s,border-color .3s; cursor:zoom-in; }
+  .infog-card:hover { transform:translateY(-5px); box-shadow:0 20px 50px rgba(0,0,0,.35); border-color:var(--magenta); }
+  .infog-img-wrap { width:100%; aspect-ratio:4/3; overflow:hidden; background:var(--navy-light); }
+  .infog-img-wrap img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; transition:transform .4s ease; }
+  .infog-info { padding:.9rem 1.1rem; }
+  .infog-title { font-family:'Montserrat',sans-serif; font-weight:700; font-size:.85rem; color:var(--white); line-height:1.4; margin-bottom:.2rem; }
+  .infog-meta { font-size:.72rem; color:var(--lavender); font-style:italic; }
+
+  /* DOCUMENTS */
+  #documents { background:var(--off-white); }
+  .docs-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1.4rem; max-width:1200px; margin:0 auto; }
+  .doc-card { background:var(--white); border:1px solid var(--lilac); border-radius:var(--radius); overflow:hidden; transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s; box-shadow:0 2px 12px rgba(43,47,90,.05); text-decoration:none; display:block; }
+  .doc-card:hover { transform:translateY(-5px); box-shadow:0 20px 50px rgba(43,47,90,.13); }
+  .doc-header { padding:1.8rem 1.5rem 1rem; display:flex; align-items:center; gap:1rem; }
+  .doc-icon { width:48px; height:48px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0; }
+  .doc-icon.guide { background:#fffbf0; }
+  .doc-type { font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); margin-bottom:.2rem; }
+  .doc-title { font-family:'Montserrat',sans-serif; font-weight:700; font-size:.95rem; color:var(--navy); line-height:1.35; }
+  .doc-body { padding:0 1.5rem 1.5rem; }
+  .doc-desc { font-size:.85rem; color:var(--text-muted); line-height:1.65; margin-bottom:.8rem; }
+  .doc-footer { display:flex; align-items:center; justify-content:space-between; }
+  .doc-date { font-size:.75rem; color:var(--lavender); font-style:italic; }
+  .doc-btn { font-size:.72rem; font-weight:700; font-family:'Montserrat',sans-serif; letter-spacing:.08em; text-transform:uppercase; color:var(--magenta); }
+
+  /* CONTACT */
+  #contact { background:var(--white); }
+  .contact-inner { max-width:750px; margin:0 auto; text-align:center; }
+  .contact-box { background:var(--off-white); border:1px solid var(--lilac); border-radius:var(--radius); padding:2.5rem 2rem; box-shadow:0 8px 40px rgba(43,47,90,.08); }
+  .contact-links { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+  .contact-links a { display:inline-flex; align-items:center; gap:.5rem; padding:.75rem 1.5rem; background:var(--white); border:1.5px solid var(--lilac); border-radius:999px; text-decoration:none; font-size:.85rem; font-weight:600; color:var(--navy); font-family:'Montserrat',sans-serif; transition:all .3s cubic-bezier(.22,1,.36,1); }
+  .contact-links a:hover { border-color:var(--magenta); color:var(--magenta); background:var(--white); transform:translateY(-2px); box-shadow:0 8px 20px rgba(168,85,160,.15); }
+
+  /* LIGHTBOX */
+  .lightbox-overlay { display:none; position:fixed; inset:0; z-index:1000; background:rgba(10,10,20,.92); align-items:center; justify-content:center; flex-direction:column; gap:1rem; }
+  .lightbox-overlay.open { display:flex; }
+  .lightbox-overlay img { max-width:92vw; max-height:82vh; border-radius:12px; }
+  .lightbox-caption { color:#e2e8f0; font-size:.9rem; font-style:italic; }
+  .lightbox-close { position:fixed; top:1.5rem; right:1.8rem; background:var(--magenta); color:#fff; border:none; border-radius:50%; width:44px; height:44px; font-size:1.4rem; cursor:pointer; }
+
+  footer { background:var(--navy); color:var(--lavender); text-align:center; padding:2.5rem 5%; font-size:.82rem; }
+  footer strong { color:var(--white); }
+
+  @media (max-width:900px) {
+    .about-grid { grid-template-columns:1fr; }
+    .about-photo-col { flex-direction:row; align-items:flex-start; gap:1.5rem; flex-wrap:wrap; }
+    .about-portrait { width:160px; height:200px; }
+  }
+  @media (max-width:768px) {
+    .hero-inner { grid-template-columns:1fr; text-align:center; }
+    .hero-photo-wrap { order:-1; }
+    .hero-photo { width:200px; height:250px; }
+    .hero-photo-wrap::before { width:200px; height:250px; }
+    .nav-hamburger { display:flex; }
+    .nav-links {
+      display:none; position:fixed; top:68px; left:0; right:0;
+      background:rgba(255,255,255,.97); backdrop-filter:blur(14px);
+      flex-direction:column; gap:0; padding:0; border-bottom:2px solid var(--lilac);
+    }
+    .nav-links.open { display:flex; }
+    .nav-links a { display:block; padding:1rem 2rem; }
+    .nav-links a::after { display:none; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <div class="nav-logo">IMAG<span>Y</span>NE</div>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#experience">Parcours</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#blog">Analyses</a></li>
+    <li><a href="#productions">Productions</a></li>
+    <li><a href="#documents">Ressources</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-tagline">Colorons votre quotidien</p>
+      <h1>
+        L'Afrique ne manque pas de communicants…
+        <em>elle manque de personnes qui racontent son histoire.</em>
+      </h1>
+      <p class="hero-bio">
+        <strong>Conseil en communication & Stratégie médias.</strong><br>
+        J'accompagne les organisations et les marques à structurer leur communication institutionnelle, produire du contenu à fort impact et asseoir leur présence publique au Gabon.
+      </p>
+      <div class="hero-cta">
+        <a href="#blog" class="btn btn-primary">Lire mes analyses</a>
+        <a href="#contact" class="btn btn-outline">Me contacter</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img src="07287492-f689-468d-bc6b-7eb6292cf883.JPG" alt="Junior Yoni Tsango" class="hero-photo">
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-grid">
+    <div class="about-photo-col reveal-left">
+      <img src="07287492-f689-468d-bc6b-7eb6292cf883.JPG" alt="Junior Yoni Tsango" class="about-portrait">
+      <div class="about-stats">
+        <div class="stat-item"><div class="stat-num">7+</div><div class="stat-label">Années d'expérience</div></div>
+        <div class="stat-item"><div class="stat-num">50+</div><div class="stat-label">Productions médias</div></div>
+      </div>
+    </div>
+    <div class="about-text reveal-right">
+      <p class="section-label">Parcours</p>
+      <h2 class="section-title">Junior Yoni Tsango</h2>
+      <div class="divider"></div>
+      <p>
+        Fondateur d'<strong>IMAGYNE</strong>, je pilote des stratégies de communication globale pour valoriser les actions de développement communautaire, de citoyenneté et de préservation de l'environnement au Gabon.
+      </p>
+      <p>
+        Intervenant régulier auprès d'ONG internationales, j'articule des solutions concrètes allant de la production audiovisuelle de terrain à la formation des équipes de communication.
+      </p>
+      <div class="skills-grid">
+        <span class="skill-tag">Stratégie médias</span>
+        <span class="skill-tag">Communication institutionnelle</span>
+        <span class="skill-tag">Production audiovisuelle</span>
+        <span class="skill-tag">Renforcement de capacités</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label reveal">Impact</p>
+    <h2 class="section-title reveal delay-1">Expérience professionnelle</h2>
+    <div class="divider reveal delay-2"></div>
+    <div class="exp-grid">
+      <div class="exp-card reveal delay-1">
+        <div class="exp-accent"></div>
+        <div class="exp-body">
+          <p class="exp-org">Réseau Femme Lève-Toi (ReFLeT) · UE / AFD</p>
+          <h3 class="exp-title">Projet Citoyennes Engagées — Chargé de Communication</h3>
+          <p class="exp-desc">Déploiement de la stratégie de visibilité et production de contenus numériques pour le renforcement du pouvoir d'agir des femmes.</p>
+        </div>
+      </div>
+      <div class="exp-card reveal delay-2">
+        <div class="exp-accent"></div>
+        <div class="exp-body">
+          <p class="exp-org">Tournons la Page Gabon</p>
+          <h3 class="exp-title">Production de contenus & Mobilisation</h3>
+          <p class="exp-desc">Création de podcasts et de formats vidéo orientés sur la sensibilisation électorale et la participation citoyenne des jeunes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label reveal">Expertise</p>
+    <h2 class="section-title reveal delay-1">Services IMAGYNE</h2>
+    <div class="divider reveal delay-2"></div>
+    <div class="services-grid">
+      <div class="service-card reveal delay-1">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></div>
+        <p class="service-name">Communication Institutionnelle</p>
+        <p class="service-sub">Conseil stratégique</p>
+        <p class="service-desc">Accompagnement complet des institutions et ONG pour structurer leurs messages et aligner leurs actions publiques.</p>
+      </div>
+      <div class="service-card reveal delay-2">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M15 10l4.553-2.277A1 1 0 0 1 21 8.723v6.554a1 1 0 0 1-1.447.9L15 14M3 8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z"/></svg></div>
+        <p class="service-name">Production Multimédia</p>
+        <p class="service-sub">IMAGYNE Média</p>
+        <p class="service-desc">Conception et diffusion de formats digitaux : podcasts de fond, capsules vidéo, infographies ciblées et reportages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="blog">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label reveal">Décryptages</p>
+    <h2 class="section-title reveal delay-1">Analyses & Points de vue</h2>
+    <div class="divider reveal delay-2"></div>
+    <p class="section-intro reveal delay-2">Réflexions mensuelles sur les enjeux de la communication stratégique en Afrique et au Gabon.</p>
+    
+    <div class="blog-grid">
+      <a href="article-01-communication-afrique.html" class="blog-card reveal delay-1">
+        <div class="blog-img-wrap">
+          <img src="beautiful-shot-tree-savanna-plains-with-blue-sky.jpg" alt="Communication en Afrique" loading="lazy">
+        </div>
+        <div class="blog-body">
+          <p class="blog-meta">Analyse · Juillet 2026</p>
+          <h3 class="blog-title">L'Afrique ne manque pas de communicants…</h3>
+          <p class="blog-excerpt">Pourquoi le continent doit impérativement reprendre le contrôle de ses propres récits visuels et institutionnels. Analyse des dynamiques de communication locale.</p>
+          <span class="blog-link">Lire l'article →</span>
+        </div>
+      </a>
+      
+      <div class="blog-card reveal delay-2" style="opacity: 0.6; border: 2px dashed var(--lilac); background: transparent;">
+        <div class="blog-body" style="justify-content: center; align-items: center; text-align: center; min-height: 250px;">
+          <p style="font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--text-muted);">Prochaine analyse</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin-top: 0.4rem;">Rendez-vous le mois prochain</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="productions">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label reveal">Contenus</p>
+    <h2 class="section-title reveal delay-1">Productions</h2>
+    <div class="divider reveal delay-1"></div>
+    <div class="prod-tabs reveal delay-2">
+      <button class="prod-tab active" onclick="switchTab('videos',this)">🎬 Vidéos</button>
+      <button class="prod-tab" onclick="switchTab('infographies',this)">🖼 Infographies</button>
+    </div>
+
+    <div class="prod-panel active" id="panel-videos">
+      <div class="productions-grid">
+        <a href="https://youtu.be/j0n5Vu3vp88" target="_blank" class="prod-card reveal">
+          <div class="prod-thumb-wrap">
+            <img src="https://img.youtube.com/vi/j0n5Vu3vp88/hqdefault.jpg" alt="Vidéo" loading="lazy">
+            <div class="prod-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg></div>
+            <span class="prod-platform-badge yt">YouTube</span>
+          </div>
+          <div class="prod-info"><div class="prod-title">Reportage journée électorale avec TLP Gabon</div><div class="prod-meta">IMAGYNE</div></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="prod-panel" id="panel-infographies">
+      <div class="infog-grid">
+        <div class="infog-card reveal" onclick="openLightbox(this)">
+          <div class="infog-img-wrap"><img src="beautiful-shot-tree-savanna-plains-with-blue-sky.jpg" alt="Infographie" loading="lazy"></div>
+          <div class="infog-info"><div class="infog-title">Mission de terrain — Village de Mindzi</div><div class="infog-meta">Citoyennes Engagées</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="documents">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label reveal">Ressources</p>
+    <h2 class="section-title reveal delay-1">Documents complémentaires</h2>
+    <div class="divider reveal delay-2"></div>
+    <div class="docs-grid">
+      <div class="doc-card reveal delay-1" style="border: 1px dashed var(--magenta);">
+        <div class="doc-header">
+          <div class="doc-icon guide">📖</div>
+          <div>
+            <div class="doc-type">Guide Pratique</div>
+            <h3 class="doc-title">Guide du communicant des ONG Gabonaises</h3>
+          </div>
+        </div>
+        <div class="doc-body">
+          <p class="doc-desc">Manuel alliant pratiques digitales et impératifs administratifs pour les structures associatives locales.</p>
+          <div class="doc-footer"><span class="doc-date" style="color:var(--magenta);">En cours de rédaction ⏳</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-inner reveal">
+    <p class="section-label">Collaboration</p>
+    <h2 class="section-title">Construisons votre projet</h2>
+    <div class="divider"></div>
+    <div class="contact-box reveal delay-2">
+      <div class="contact-links">
+        <a href="mailto:jyoni48@gmail.com">jyoni48@gmail.com</a>
+        <a href="https://wa.me/24162316035" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="">
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
+<footer>
+  <p>© 2026 <strong>IMAGYNE</strong> — Tous droits réservés.</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const navLinksEl = document.getElementById('navLinks');
+    const btn = document.getElementById('hamburger');
+    navLinksEl.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
+  });
+
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  
+  if (window.IntersectionObserver) {
+    const sectionObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(a => a.classList.remove('active'));
+          const a = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+          if (a) a.classList.add('active');
+        }
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(s => sectionObs.observe(s));
+
+    const revObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revObs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => revObs.observe(el));
+  }
+
+  function switchTab(tab, btn) {
+    document.querySelectorAll('.prod-tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.prod-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + tab).classList.add('active');
+  }
+
+  function openLightbox(card) {
+    const img = card.querySelector('img');
+    const title = card.querySelector('.infog-title');
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-caption').textContent = title ? title.textContent : '';
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox(e) {
+    if (!e || e.target !== document.getElementById('lightbox-img')) {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+  }
+</script>
+</body>
+</html>
     height:68px; transition:box-shadow .3s;
   }
   nav.scrolled { box-shadow:0 4px 32px rgba(43,47,90,.10); }

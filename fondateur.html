@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Junior Yoni Tsango, communicateur, graphiste et acteur civique</title>
+<meta name="description" content="Portfolio de Junior Yoni Tsango, communicateur, graphiste et acteur civique engagé sur les questions de jeunesse au Gabon.">
+<meta property="og:title" content="Junior Yoni Tsango, portfolio">
+<meta property="og:description" content="Communicateur, graphiste et acteur civique engagé sur les questions de jeunesse au Gabon.">
+<meta property="og:image" content="https://imagyne241.com/photo-yoni.jpg">
+<meta property="og:url" content="https://imagyne241.com/fondateur.html">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QM3TPMKJR7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QM3TPMKJR7');
+</script>
+
+<style>
+  :root {
+    --rust: #0b6e4f;
+    --rust-dark: #084f39;
+    --ochre: #d8a13a;
+    --ink: #1a1a1a;
+    --ink-light: #333333;
+    --sand: #ece4d3;
+    --sand-dark: #ddd2b8;
+    --cream: #f7f3ea;
+    --muted: #6b6459;
+    --white: #ffffff;
+    --radius: 18px;
+    --radius-sm: 10px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Space Grotesk',sans-serif; background:var(--cream); color:var(--ink); line-height:1.7; overflow-x:hidden; }
+  h1,h2,h3 { font-family:'Fraunces',serif; }
+  section { padding:5.5rem 5%; }
+  a { color:inherit; }
+  img { max-width:100%; display:block; }
+
+  .reveal { opacity:0; transform:translateY(24px); transition:opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+  .delay-1.visible { transition-delay:.08s; }
+  .delay-2.visible { transition-delay:.16s; }
+  .delay-3.visible { transition-delay:.24s; }
+
+  /* NAV */
+  nav#mainNav {
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(255,250,243,.95); backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--sand-dark);
+    padding:0 5%; display:flex; align-items:center; justify-content:space-between;
+    height:64px; transition:box-shadow .3s;
+  }
+  nav#mainNav.scrolled { box-shadow:0 4px 24px rgba(35,35,35,.08); }
+  .nav-logo { font-family:'Fraunces',serif; font-weight:700; font-style:italic; font-size:1.25rem; color:#a8a196; text-decoration:none; }
+  .nav-logo span { color:var(--rust); }
+  .nav-links { display:flex; gap:1.3rem; list-style:none; flex-wrap:nowrap; align-items:center; }
+  .nav-links a { text-decoration:none; font-size:.78rem; font-weight:500; letter-spacing:.04em; color:var(--muted); position:relative; padding-bottom:4px; transition:color .3s; white-space:nowrap; }
+  .nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--rust); transition:width .35s cubic-bezier(.22,1,.36,1); }
+  .nav-links a:hover { color:var(--ink); }
+  .nav-links a:hover::after { width:100%; }
+  .nav-imagyne-link {
+    background:var(--ink); color:#fff !important; padding:.5rem 1.1rem !important;
+    border-radius:999px; font-weight:600 !important;
+  }
+  .nav-imagyne-link:hover { background:var(--rust); }
+  .nav-imagyne-link::after { display:none; }
+
+  .nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; }
+  .nav-hamburger span { display:block; width:24px; height:2px; background:var(--ink); border-radius:2px; transition:all .3s; }
+  .nav-hamburger.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+  .nav-hamburger.open span:nth-child(2) { opacity:0; }
+  .nav-hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+
+  /* BUTTONS */
+  .btn { display:inline-block; padding:.85rem 2rem; border-radius:999px; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:.82rem; letter-spacing:.03em; text-decoration:none; border:none; cursor:pointer; transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s,background .2s; }
+  .btn-primary { background:var(--rust); color:var(--white); box-shadow:0 6px 24px rgba(11,110,79,.3); }
+  .btn-primary:hover { background:var(--rust-dark); transform:translateY(-2px); }
+  .btn-outline { background:transparent; color:var(--ink); border:2px solid var(--ink); }
+  .btn-outline:hover { background:var(--ink); color:#fff; }
+  .btn-outline-light { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.4); }
+  .btn-outline-light:hover { border-color:#fff; background:rgba(255,255,255,.1); }
+
+  /* HERO */
+  .hero {
+    min-height:92vh; display:flex; align-items:center; padding-top:64px;
+    background:var(--sand); position:relative; overflow:hidden;
+  }
+  .hero::before {
+    content:''; position:absolute; top:-100px; right:-100px; width:500px; height:500px; border-radius:50%;
+    background:radial-gradient(circle,rgba(216,161,58,.22),transparent 70%);
+  }
+  .hero-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.1fr .9fr; gap:3.5rem; align-items:center; position:relative; z-index:2; width:100%; }
+  .hero-eyebrow { font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:.82rem; letter-spacing:.1em; text-transform:uppercase; color:var(--rust); margin-bottom:1rem; }
+  .hero h1 { font-weight:700; font-style:italic; font-size:clamp(1.8rem,4vw,2.9rem); color:var(--ink); line-height:1.2; margin-bottom:1.3rem; }
+  .hero h1 em { color:var(--rust); font-style:normal; font-weight:900; }
+  .hero-sub { font-size:1.02rem; color:var(--muted); max-width:520px; margin-bottom:2rem; line-height:1.75; }
+  .hero-cta { display:flex; gap:1rem; flex-wrap:wrap; }
+  .hero-photo-wrap { position:relative; }
+  .hero-photo { width:100%; max-width:340px; aspect-ratio:4/5; object-fit:cover; border-radius:var(--radius); box-shadow:0 30px 60px rgba(35,35,35,.2); margin:0 auto; }
+  .hero-photo-frame { position:absolute; top:20px; left:20px; width:100%; max-width:340px; aspect-ratio:4/5; border:3px solid var(--ochre); border-radius:var(--radius); z-index:-1; }
+
+  .section-label { font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--rust); margin-bottom:.7rem; text-align:center; }
+  .section-title { font-weight:700; font-style:italic; font-size:clamp(1.5rem,3.2vw,2.1rem); color:var(--ink); text-align:center; margin-bottom:1rem; }
+  .divider { width:56px; height:3px; background:var(--rust); border-radius:3px; margin:0 auto 1.6rem; }
+  .section-intro { text-align:center; max-width:640px; margin:0 auto 3rem; color:var(--muted); font-size:1rem; line-height:1.75; }
+
+  /* ABOUT */
+  #apropos { background:var(--cream); }
+  .about-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; max-width:1000px; margin:2.5rem auto 0; }
+  .about-stat { text-align:center; background:var(--sand); border-radius:var(--radius); padding:1.6rem 1rem; }
+  .about-stat-num { font-family:'Fraunces',serif; font-weight:900; font-size:2rem; color:var(--rust); }
+  .about-stat-label { font-size:.78rem; color:var(--muted); margin-top:.3rem; }
+  .about-text { max-width:720px; margin:0 auto; text-align:center; color:#333; font-size:1.02rem; line-height:1.8; }
+  .about-text strong { color:var(--ink); }
+  .skills-pills { display:flex; flex-wrap:wrap; justify-content:center; gap:.7rem; margin-top:2rem; }
+  .skill-pill { background:var(--sand); color:var(--ink); font-size:.82rem; font-weight:500; padding:.5rem 1.1rem; border-radius:999px; border:1px solid var(--sand-dark); }
+
+  /* EXPERIENCE (reuse structure, new colors) */
+  #experience { background:var(--sand); }
+  .exp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.6rem; max-width:1200px; margin:0 auto; }
+  .exp-card { background:var(--cream); border-radius:var(--radius); overflow:hidden; box-shadow:0 4px 20px rgba(35,35,35,.06); transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s; }
+  .exp-card:hover { transform:translateY(-6px); box-shadow:0 24px 50px rgba(35,35,35,.14); }
+  .exp-accent { height:5px; background:linear-gradient(90deg,var(--rust),var(--ochre)); }
+  .exp-body { padding:1.8rem; }
+  .exp-org { font-size:.78rem; color:var(--rust); font-weight:600; text-transform:uppercase; letter-spacing:.05em; margin-bottom:.5rem; }
+  .exp-title { font-family:'Fraunces',serif; font-weight:700; font-size:1.05rem; color:var(--ink); margin-bottom:.7rem; line-height:1.4; }
+  .exp-desc { font-size:.9rem; color:var(--muted); line-height:1.65; margin-bottom:1rem; }
+  .exp-tags { display:flex; flex-wrap:wrap; gap:.5rem; }
+  .exp-tag { background:var(--sand); color:var(--ink); font-size:.72rem; font-weight:500; padding:.3rem .8rem; border-radius:999px; }
+
+  /* PRODUCTIONS - reuse but recolor */
+  #productions { background:var(--cream); }
+  .prod-tabs { display:flex; justify-content:center; gap:1rem; margin-bottom:2.5rem; }
+  .prod-tab { background:var(--sand); border:none; padding:.7rem 1.6rem; border-radius:999px; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:.85rem; color:var(--muted); cursor:pointer; transition:background .25s,color .25s; }
+  .prod-tab.active, .prod-tab:hover { background:var(--rust); color:#fff; }
+  .prod-panel { display:none; }
+  .prod-panel.active { display:block; }
+  .productions-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.4rem; max-width:1200px; margin:0 auto; }
+  .prod-card { background:var(--white); border-radius:var(--radius); overflow:hidden; text-decoration:none; display:block; box-shadow:0 4px 20px rgba(35,35,35,.06); transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s; }
+  .prod-card:hover { transform:translateY(-5px); box-shadow:0 20px 45px rgba(35,35,35,.14); }
+  .prod-thumb-wrap { position:relative; aspect-ratio:16/9; overflow:hidden; background:#000; }
+  .prod-thumb-wrap img { width:100%; height:100%; object-fit:cover; }
+  .prod-play-btn { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:52px; opacity:.9; transition:opacity .25s; }
+  .prod-card:hover .prod-play-btn { opacity:1; }
+  .prod-platform-badge { position:absolute; top:10px; right:10px; background:rgba(0,0,0,.65); color:#fff; font-size:.68rem; font-weight:600; padding:.25rem .7rem; border-radius:999px; }
+  .prod-info { padding:1rem 1.1rem; }
+  .prod-title { font-size:.88rem; font-weight:600; color:var(--ink); line-height:1.4; margin-bottom:.3rem; }
+  .prod-meta { font-size:.75rem; color:var(--muted); }
+
+  .infog-card { background:var(--white); border-radius:var(--radius); overflow:hidden; cursor:pointer; box-shadow:0 4px 20px rgba(35,35,35,.06); transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s; }
+  .infog-card:hover { transform:translateY(-5px); box-shadow:0 20px 45px rgba(35,35,35,.14); }
+  .infog-img-wrap { aspect-ratio:1; overflow:hidden; }
+  .infog-img-wrap img { width:100%; height:100%; object-fit:cover; }
+  .infog-info { padding:1rem 1.1rem; }
+  .infog-title { font-size:.85rem; font-weight:600; color:var(--ink); line-height:1.4; margin-bottom:.3rem; }
+  .infog-meta { font-size:.72rem; color:var(--muted); }
+
+  /* LIGHTBOX */
+  .lightbox { display:none; position:fixed; inset:0; background:rgba(20,15,10,.94); z-index:200; align-items:center; justify-content:center; flex-direction:column; padding:2rem; }
+  .lightbox.active { display:flex; }
+  .lightbox img { max-width:92vw; max-height:78vh; border-radius:8px; }
+  .lightbox-caption { color:#f4ede1; margin-top:1.2rem; font-size:.9rem; text-align:center; }
+  .lightbox-close { position:absolute; top:24px; right:32px; color:#fff; font-size:2rem; cursor:pointer; background:none; border:none; }
+
+  /* DOCUMENTS */
+  #documents { background:var(--sand); }
+  .docs-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1.4rem; max-width:1200px; margin:0 auto; }
+  .doc-card { background:var(--cream); border-radius:var(--radius); overflow:hidden; box-shadow:0 4px 20px rgba(35,35,35,.06); text-decoration:none; display:block; transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s; }
+  .doc-card:hover { transform:translateY(-5px); box-shadow:0 20px 45px rgba(35,35,35,.14); }
+  .doc-body { padding:1.3rem; }
+  .doc-desc { font-size:.85rem; color:var(--muted); line-height:1.6; }
+  .doc-footer { display:flex; justify-content:space-between; align-items:center; margin-top:1rem; padding-top:.9rem; border-top:1px solid var(--sand-dark); }
+  .doc-date { font-size:.75rem; color:var(--muted); }
+  .doc-btn { font-size:.78rem; font-weight:600; color:var(--rust); }
+
+  /* ARTICLES TEASER */
+  #articles-teaser { background:var(--ink); color:#fff; text-align:center; }
+  #articles-teaser .section-label { color:var(--ochre); }
+  #articles-teaser .section-title { color:#fff; }
+  #articles-teaser p { color:#cfc7ba; max-width:560px; margin:0 auto 2rem; font-size:1rem; line-height:1.75; }
+
+  /* CONTACT FONDATEUR */
+  #contact-fondateur { background:var(--sand); }
+  .cf-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:2.5rem; max-width:1000px; margin:0 auto; align-items:start; }
+  .cf-info { background:var(--cream); border-radius:var(--radius); padding:2rem; }
+  .cf-info-item { display:flex; gap:.9rem; align-items:flex-start; margin-bottom:1.3rem; }
+  .cf-info-item:last-child { margin-bottom:0; }
+  .cf-icon { width:36px; height:36px; border-radius:9px; background:var(--rust); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .cf-info-item a, .cf-info-item p { color:var(--muted); font-size:.9rem; text-decoration:none; }
+  .cf-info-item a:hover { color:var(--ink); }
+  .cf-info-item strong { display:block; color:var(--ink); font-family:'Space Grotesk',sans-serif; font-size:.85rem; margin-bottom:.15rem; }
+  .cf-form { background:var(--cream); border-radius:var(--radius); padding:2rem; }
+  .cf-group { margin-bottom:1.1rem; }
+  .cf-group label { display:block; font-size:.78rem; font-weight:600; color:var(--ink); margin-bottom:.35rem; }
+  .cf-group input, .cf-group textarea {
+    width:100%; padding:.75rem .9rem; border:1.5px solid var(--sand-dark); border-radius:var(--radius-sm);
+    font-family:'Space Grotesk',sans-serif; font-size:.9rem; color:var(--ink);
+  }
+  .cf-group input:focus, .cf-group textarea:focus { outline:none; border-color:var(--rust); }
+  .cf-group textarea { resize:vertical; min-height:100px; }
+  .cf-submit { width:100%; background:var(--rust); color:#fff; border:none; padding:.9rem; border-radius:var(--radius-sm); font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:.85rem; cursor:pointer; transition:background .25s; }
+  .cf-submit:hover { background:var(--rust-dark); }
+
+  /* CIVIC ENGAGEMENT */
+  #engagement { background:var(--cream); }
+  .engagement-box { max-width:800px; margin:0 auto; background:var(--sand); border-radius:var(--radius); padding:2.5rem; text-align:center; }
+  .engagement-box p { color:#333; font-size:1rem; line-height:1.8; margin-bottom:1rem; }
+  .engagement-box strong { color:var(--rust); }
+
+  footer { background:var(--ink); color:#cfc7ba; text-align:center; padding:2.2rem 5%; font-size:.82rem; }
+  footer strong { color:#fff; font-family:'Fraunces',serif; font-style:italic; }
+  footer a { color:var(--ochre); text-decoration:none; }
+
+  @media (max-width:768px) {
+    .nav-hamburger { display:flex; }
+    .nav-links {
+      display:none; position:fixed; top:64px; left:0; right:0;
+      background:rgba(255,250,243,.98); backdrop-filter:blur(14px);
+      flex-direction:column; gap:0; padding:0;
+      border-bottom:2px solid var(--sand-dark);
+    }
+    .nav-links.open { display:flex; }
+    .nav-links li { border-bottom:1px solid var(--sand-dark); width:100%; }
+    .nav-links a { display:block; padding:1rem 2rem; }
+    .nav-links a::after { display:none; }
+    .nav-imagyne-link { margin:1rem 2rem; text-align:center; }
+    .hero-inner { grid-template-columns:1fr; text-align:center; }
+    .hero-photo-wrap { order:-1; max-width:260px; margin:0 auto 2rem; }
+    .hero-cta { justify-content:center; }
+    .about-grid { grid-template-columns:repeat(2,1fr); }
+  }
+</style>
+</head>
+<body>
+<nav id="mainNav">
+  <a href="fondateur.html" class="nav-logo">Junior Yoni <span>Tsango</span></a>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#experience">Expérience</a></li>
+    <li><a href="#productions">Réalisations</a></li>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="#contact-fondateur">Contact</a></li>
+    <li><a href="index.html" class="nav-imagyne-link">Voir IMAGYNE →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-eyebrow reveal">Portfolio personnel</p>
+      <h1 class="reveal delay-1">Communicateur, graphiste et <em>acteur civique</em> engagé sur les questions de jeunesse.</h1>
+      <p class="hero-sub reveal delay-2">
+        Fondateur d'IMAGYNE, je mets la communication au service de causes qui comptent : droits humains, participation citoyenne, solidarité, à travers la production de contenus, l'écriture et l'engagement de terrain.
+      </p>
+      <div class="hero-cta reveal delay-3">
+        <a href="#productions" class="btn btn-primary">Voir mes réalisations</a>
+        <a href="articles.html" class="btn btn-outline">Lire mes articles</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap reveal delay-2">
+      <div class="hero-photo-frame"></div>
+      <img src="photo-yoni.jpg" alt="Junior Yoni Tsango" class="hero-photo"
+           onerror="this.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="apropos">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label reveal">Qui je suis</p>
+    <h2 class="section-title reveal delay-1">À propos</h2>
+    <div class="divider reveal delay-2"></div>
+    <p class="about-text reveal delay-2">
+      Je m'appelle <strong>Junior Yoni Tsango</strong>. Communicateur, graphiste et acteur civique engagé sur les questions de jeunesse, je travaille depuis plusieurs années aux côtés d'organisations gabonaises et internationales sur des projets à impact social : droits des femmes, participation citoyenne, solidarité communautaire.
+      Au-delà d'IMAGYNE, l'entreprise que j'ai fondée, je reste un acteur de terrain : observateur électoral, bénévole engagé, graphiste et rédacteur passionné par les histoires que l'Afrique a encore à raconter elle-même.
+    </p>
+    <div class="skills-pills reveal delay-3">
+      <span class="skill-pill">Communication institutionnelle</span>
+      <span class="skill-pill">Production audiovisuelle</span>
+      <span class="skill-pill">Infographie</span>
+      <span class="skill-pill">Rédaction & analyse</span>
+      <span class="skill-pill">Observation électorale</span>
+      <span class="skill-pill">Engagement associatif</span>
+    </div>
+    <div class="about-grid">
+      <div class="about-stat reveal delay-1"><div class="about-stat-num">7+</div><div class="about-stat-label">Ans d'expérience</div></div>
+      <div class="about-stat reveal delay-2"><div class="about-stat-num">50+</div><div class="about-stat-label">Productions</div></div>
+      <div class="about-stat reveal delay-3"><div class="about-stat-num">3</div><div class="about-stat-label">Projets bailleurs</div></div>
+      <div class="about-stat reveal delay-1"><div class="about-stat-num">10+</div><div class="about-stat-label">Collaborations médias</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label reveal">Parcours</p>
+    <h2 class="section-title reveal delay-1">Expérience professionnelle</h2>
+    <div class="divider reveal delay-2"></div>
+    <p class="section-intro reveal delay-2">Des projets ancrés dans la réalité gabonaise, menés avec des partenaires nationaux et internationaux de premier plan.</p>
+    <div class="exp-grid">
+
+      <div class="exp-card reveal delay-1">
+        <div class="exp-accent"></div>
+        <div class="exp-body">
+          <p class="exp-org">Réseau Femme Lève-Toi (ReFLeT) · UE / AFD</p>
+          <h3 class="exp-title">Projet Citoyennes Engagées : chargé de communication</h3>
+          <p class="exp-desc">Communication pour un projet financé par l'Union Européenne, l'AFD et l'Ambassade de France, visant à réduire les inégalités femme-homme et renforcer le pouvoir d'agir des femmes au Gabon.</p>
+          <div class="exp-tags">
+            <span class="exp-tag">Campagne numérique</span>
+            <span class="exp-tag">Réseaux sociaux</span>
+            <span class="exp-tag">Site internet</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-card reveal delay-2">
+        <div class="exp-accent"></div>
+        <div class="exp-body">
+          <p class="exp-org">Tournons la Page Gabon · Élections</p>
+          <h3 class="exp-title">Mobilisation électorale : responsable production de contenus</h3>
+          <p class="exp-desc">Projet de mobilisation des jeunes et des femmes pour des élections libres et transparentes. Production de contenus durant la période électorale au Gabon avec la coalition TLP Gabon.</p>
+          <div class="exp-tags">
+            <span class="exp-tag">Production vidéo</span>
+            <span class="exp-tag">Reportage électoral</span>
+            <span class="exp-tag">Podcast</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-card reveal delay-3">
+        <div class="exp-accent"></div>
+        <div class="exp-body">
+          <p class="exp-org">ReFLeT · Festisol Gabon</p>
+          <h3 class="exp-title">Festival des Solidarités : responsable communication (bénévole)</h3>
+          <p class="exp-desc">Rendez-vous international pour promouvoir la solidarité, ouvert au monde. Mené au Gabon depuis 2021, le Festisol se caractérise par son identité artistique et festive autour de thématiques à fort impact social.</p>
+          <div class="exp-tags">
+            <span class="exp-tag">Communication événementielle</span>
+            <span class="exp-tag">Identité visuelle</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENT CIVIQUE -->
+<section id="engagement">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label reveal">Au-delà du métier</p>
+    <h2 class="section-title reveal delay-1">Acteur civique</h2>
+    <div class="divider reveal delay-2"></div>
+    <div class="engagement-box reveal delay-2">
+      <p>
+        Convaincu que la communication a un rôle à jouer dans la vie démocratique et sociale du Gabon,
+        j'ai été <strong>observateur électoral accrédité</strong> auprès du Réseau des Observateurs Citoyens (ROC),
+        et j'accompagne bénévolement des initiatives de sensibilisation communautaire.
+      </p>
+      <p>
+        Cet engagement nourrit directement mon travail de communicant : comprendre le terrain,
+        parler aux réalités locales, et utiliser mes compétences créatives pour des causes qui dépassent le cadre commercial.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTIONS -->
+<section id="productions">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label reveal">Contenus</p>
+    <h2 class="section-title reveal delay-1">Productions</h2>
+    <div class="divider reveal delay-1"></div>
+    <p class="section-intro reveal delay-2">Vidéos, reportages, spots et infographies : <em>une sélection de mes travaux récents.</em></p>
+
+    <div class="prod-tabs reveal delay-2">
+      <button class="prod-tab active" onclick="switchTab('videos',this)">🎬 Vidéos</button>
+      <button class="prod-tab" onclick="switchTab('infographies',this)">🖼 Infographies</button>
+    </div>
+
+    <!-- VIDEOS -->
+    <div class="prod-panel active" id="panel-videos">
+      <div class="productions-grid">
+
+        <!-- YouTube thumbnail = https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg -->
+
+        <a href="https://youtu.be/j0n5Vu3vp88" target="_blank" class="prod-card reveal delay-1">
+          <div class="prod-thumb-wrap">
+            <img src="https://img.youtube.com/vi/j0n5Vu3vp88/hqdefault.jpg" alt="Journée électorale TLP Gabon" loading="lazy">
+            <div class="prod-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg></div>
+            <span class="prod-platform-badge yt">YouTube</span>
+          </div>
+          <div class="prod-info"><div class="prod-title">Reportage de la journée électorale avec TLP Gabon</div><div class="prod-meta">YouTube · IMAGYNE</div></div>
+        </a>
+
+        <a href="https://youtu.be/ztb75yA7FGI" target="_blank" class="prod-card reveal delay-2">
+          <div class="prod-thumb-wrap">
+            <img src="https://img.youtube.com/vi/ztb75yA7FGI/hqdefault.jpg" alt="Spot violences physiques" loading="lazy">
+            <div class="prod-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg></div>
+            <span class="prod-platform-badge yt">YouTube</span>
+          </div>
+          <div class="prod-info"><div class="prod-title">Spot d'information sur les violences physiques</div><div class="prod-meta">YouTube · IMAGYNE</div></div>
+        </a>
+
+        <a href="https://youtu.be/tZwUXzdenV8" target="_blank" class="prod-card reveal delay-3">
+          <div class="prod-thumb-wrap">
+            <img src="https://img.youtube.com/vi/tZwUXzdenV8/hqdefault.jpg" alt="Spot Citoyennes Engagées" loading="lazy">
+            <div class="prod-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg></div>
+            <span class="prod-platform-badge yt">YouTube</span>
+          </div>
+          <div class="prod-info"><div class="prod-title">Spot de présentation du projet Citoyennes Engagées</div><div class="prod-meta">YouTube · IMAGYNE</div></div>
+        </a>
+
+        <a href="https://youtu.be/ivjNOiQrSEY" target="_blank" class="prod-card reveal delay-1">
+          <div class="prod-thumb-wrap">
+            <img src="https://img.youtube.com/vi/ivjNOiQrSEY/hqdefault.jpg" alt="Campagne numérique" loading="lazy">
+            <div class="prod-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg></div>
+            <span class="prod-platform-badge yt">YouTube</span>
+          </div>
+          <div class="prod-info"><div class="prod-title">Spot de lancement de la campagne de sensibilisation numérique</div><div class="prod-meta">YouTube · IMAGYNE</div></div>
+        </a>
+
+        <a href="https://youtu.be/wFJgsSxd3eA" target="_blank" class="prod-card reveal delay-2">
+          <div class="prod-thumb-wrap">
+            <img src="https://img.youtube.com/vi/wFJgsSxd3eA/hqdefault.jpg" alt="Spot violences femmes" loading="lazy">
+            <div class="prod-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg></div>
+            <span class="prod-platform-badge yt">YouTube</span>
+          </div>
+          <div class="prod-info"><div class="prod-title">Spot de sensibilisation contre les violences faites aux femmes</div><div class="prod-meta">YouTube · IMAGYNE</div></div>
+        </a>
+
+        <a href="https://youtu.be/_rMWE4UpQbw" target="_blank" class="prod-card reveal delay-3">
+          <div class="prod-thumb-wrap">
+            <img src="https://img.youtube.com/vi/_rMWE4UpQbw/hqdefault.jpg" alt="Scène violences physiques" loading="lazy">
+            <div class="prod-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg></div>
+            <span class="prod-platform-badge yt">YouTube</span>
+          </div>
+          <div class="prod-info"><div class="prod-title">Scène vidéo de sensibilisation contre les violences physiques</div><div class="prod-meta">YouTube · IMAGYNE</div></div>
+        </a>
+
+        <a href="https://www.facebook.com/share/v/1CicFB9aUF/" target="_blank" class="prod-card reveal delay-1">
+          <div class="prod-thumb-wrap" style="background:linear-gradient(135deg,#1877f2,#0d4fa8);display:flex;align-items:center;justify-content:center;">
+            <svg style="width:56px;height:56px;fill:#fff;opacity:.5;" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <div class="prod-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#1877f2"/><path d="M45 24 27 14v20" fill="#fff"/></svg></div>
+            <span class="prod-platform-badge fb">Facebook</span>
+          </div>
+          <div class="prod-info"><div class="prod-title">Podcast de TLP Gabon contre l'abstention électorale</div><div class="prod-meta">Facebook · IMAGYNE</div></div>
+        </a>
+
+        <a href="https://youtu.be/eCq8_3TcP70" target="_blank" class="prod-card reveal delay-2">
+          <div class="prod-thumb-wrap">
+            <img src="https://img.youtube.com/vi/eCq8_3TcP70/hqdefault.jpg" alt="Témoignage bénéficiaire" loading="lazy">
+            <div class="prod-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg></div>
+            <span class="prod-platform-badge yt">YouTube</span>
+          </div>
+          <div class="prod-info"><div class="prod-title">Témoignage de bénéficiaire du projet Citoyennes Engagées</div><div class="prod-meta">YouTube · IMAGYNE</div></div>
+        </a>
+
+        <a href="https://youtu.be/KNYM9JTx9R0" target="_blank" class="prod-card reveal delay-3">
+          <div class="prod-thumb-wrap">
+            <img src="https://img.youtube.com/vi/KNYM9JTx9R0/hqdefault.jpg" alt="Podcast droits des femmes" loading="lazy">
+            <div class="prod-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg></div>
+            <span class="prod-platform-badge yt">YouTube</span>
+          </div>
+          <div class="prod-info"><div class="prod-title">Podcast pour la journée internationale des droits des femmes</div><div class="prod-meta">YouTube · IMAGYNE</div></div>
+        </a>
+
+        <a href="https://citoyennesengagees.org/actualite" target="_blank" class="prod-card reveal delay-1">
+          <div class="prod-thumb-wrap" style="background:linear-gradient(135deg,var(--navy-light),var(--violet));display:flex;align-items:center;justify-content:center;">
+            <svg style="width:56px;height:56px;fill:rgba(255,255,255,.4);" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            <span class="prod-platform-badge web">Web</span>
+          </div>
+          <div class="prod-info"><div class="prod-title">Site internet du projet Citoyennes Engagées</div><div class="prod-meta">citoyennesengagees.org</div></div>
+        </a>
+
+        <a href="https://www.facebook.com/share/v/18gAWvyGwA/" target="_blank" class="prod-card reveal delay-2">
+          <div class="prod-thumb-wrap" style="background:linear-gradient(135deg,#1877f2,#0d4fa8);display:flex;align-items:center;justify-content:center;">
+            <svg style="width:56px;height:56px;fill:#fff;opacity:.5;" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <div class="prod-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#1877f2"/><path d="M45 24 27 14v20" fill="#fff"/></svg></div>
+            <span class="prod-platform-badge fb">Facebook</span>
+          </div>
+          <div class="prod-info"><div class="prod-title">Publicité des activités Festisol</div><div class="prod-meta">Facebook · IMAGYNE</div></div>
+        </a>
+
+        <a href="https://www.facebook.com/share/v/18v2B2QQ2N/" target="_blank" class="prod-card reveal delay-3">
+          <div class="prod-thumb-wrap" style="background:linear-gradient(135deg,#1877f2,#0d4fa8);display:flex;align-items:center;justify-content:center;">
+            <svg style="width:56px;height:56px;fill:#fff;opacity:.5;" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <div class="prod-play-btn"><svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#1877f2"/><path d="M45 24 27 14v20" fill="#fff"/></svg></div>
+            <span class="prod-platform-badge fb">Facebook</span>
+          </div>
+          <div class="prod-info"><div class="prod-title">Spot vidéo Festisol</div><div class="prod-meta">Facebook · IMAGYNE</div></div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- INFOGRAPHIES -->
+    <div class="prod-panel" id="panel-infographies">
+      <div class="infog-grid">
+        <div class="infog-card reveal delay-1" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16527.jpg" alt="Mission Mindzi" loading="lazy"></div><div class="infog-info"><div class="infog-title">Mission de terrain : village de Mindzi</div><div class="infog-meta">Citoyennes Engagées · ReFLeT</div></div></div>
+        <div class="infog-card reveal delay-2" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16526.jpg" alt="Mission Elarmilo" loading="lazy"></div><div class="infog-info"><div class="infog-title">Mission de terrain : village d'Elarmilo</div><div class="infog-meta">Citoyennes Engagées · ReFLeT</div></div></div>
+        <div class="infog-card reveal delay-3" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16528.jpg" alt="Mission Ngoumessi" loading="lazy"></div><div class="infog-info"><div class="infog-title">Mission de terrain : Ngoumessi, Mitzic</div><div class="infog-meta">Citoyennes Engagées · ReFLeT</div></div></div>
+        <div class="infog-card reveal delay-1" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16669.jpg" alt="Sensibilisation numérique" loading="lazy"></div><div class="infog-info"><div class="infog-title">Sensibilisation numérique, oct. 2023 / mars 2024</div><div class="infog-meta">Citoyennes Engagées</div></div></div>
+        <div class="infog-card reveal delay-2" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16667.jpg" alt="Le ménage n'est pas genré" loading="lazy"></div><div class="infog-info"><div class="infog-title">Le ménage, une notion de base et non une tâche genrée</div><div class="infog-meta">Citoyennes Engagées</div></div></div>
+        <div class="infog-card reveal delay-3" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16568.jpg" alt="Site Citoyennes Engagées" loading="lazy"></div><div class="infog-info"><div class="infog-title">Site Citoyennes Engagées : renforcer le pouvoir des femmes</div><div class="infog-meta">citoyennesengagees.org</div></div></div>
+        <div class="infog-card reveal delay-1" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16663.jpg" alt="L'amour ne fait pas mal" loading="lazy"></div><div class="infog-info"><div class="infog-title">L'amour ne fait pas mal : lutte contre les VBG</div><div class="infog-meta">Citoyennes Engagées</div></div></div>
+        <div class="infog-card reveal delay-2" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16569.jpg" alt="Interface desktop" loading="lazy"></div><div class="infog-info"><div class="infog-title">Plateforme Citoyennes Engagées : interface desktop</div><div class="infog-meta">citoyennesengagees.org</div></div></div>
+        <div class="infog-card reveal delay-3" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16665.jpg" alt="66% violences" loading="lazy"></div><div class="infog-info"><div class="infog-title">66% des victimes de violences physiques sont des femmes</div><div class="infog-meta">Citoyennes Engagées</div></div></div>
+        <div class="infog-card reveal delay-1" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16570.jpg" alt="Lancement officiel" loading="lazy"></div><div class="infog-info"><div class="infog-title">Lancement officiel de citoyennesengagees.org, nov. 2022</div><div class="infog-meta">Citoyennes Engagées · ReFLeT</div></div></div>
+        <div class="infog-card reveal delay-2" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16633.jpg" alt="Violence psychologique" loading="lazy"></div><div class="infog-info"><div class="infog-title">Les cicatrices de la violence psychologique sont profondes</div><div class="infog-meta">Citoyennes Engagées</div></div></div>
+        <div class="infog-card reveal delay-3" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16679.jpg" alt="AOC participation politique" loading="lazy"></div><div class="infog-info"><div class="infog-title">Action Orientée Changement : participation politique des femmes</div><div class="infog-meta">ReFLeT · UNOCA · 2023</div></div></div>
+        <div class="infog-card reveal delay-1" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16674.jpg" alt="Festisol présentation" loading="lazy"></div><div class="infog-info"><div class="infog-title">Festival des Solidarités : présentation et actions</div><div class="infog-meta">Festisol Gabon · ReFLeT</div></div></div>
+        <div class="infog-card reveal delay-2" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16673.jpg" alt="Festisol souvenirs" loading="lazy"></div><div class="infog-info"><div class="infog-title">Festisol, souvenirs et plaquette de présentation</div><div class="infog-meta">Festisol Gabon</div></div></div>
+        <div class="infog-card reveal delay-3" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16566.jpg" alt="Réinsertion prisonniers" loading="lazy"></div><div class="infog-info"><div class="infog-title">Festisol 2022 : réinsertion des jeunes prisonniers</div><div class="infog-meta">Festival des Solidarités · Gabon</div></div></div>
+        <div class="infog-card reveal delay-1" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16685.webp" alt="Approche genre harcèlement" loading="lazy"></div><div class="infog-info"><div class="infog-title">Approche genre & harcèlement en milieu professionnel</div><div class="infog-meta">ReFLeT · Société Bouzguenda Frères</div></div></div>
+        <div class="infog-card reveal delay-2" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16682.jpg" alt="Partenaires AOC" loading="lazy"></div><div class="infog-info"><div class="infog-title">Partenaires de mise en œuvre : ReFLeT, ID, UNOCA</div><div class="infog-meta">AOC · 2023</div></div></div>
+        <div class="infog-card reveal delay-3" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16544.jpg" alt="Causerie-débat femmes politique" loading="lazy"></div><div class="infog-info"><div class="infog-title">Causerie-débat : faut-il plus de femmes engagées en politique ?</div><div class="infog-meta">ReFLeT · UNOCA</div></div></div>
+        <div class="infog-card reveal delay-1" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16540.jpg" alt="Causerie-débat jour 1" loading="lazy"></div><div class="infog-info"><div class="infog-title">Causerie-débat jour 1, sensibilisation au genre (nov. 2023)</div><div class="infog-meta">ReFLeT · UNOCA</div></div></div>
+        <div class="infog-card reveal delay-2" onclick="openLightbox(this)"><div class="infog-img-wrap"><img src="infog-16529.jpg" alt="AG ReFLeT 2024" loading="lazy"></div><div class="infog-info"><div class="infog-title">Assemblée générale ReFLeT, avril 2024</div><div class="infog-meta">Réseau Femme Lève-Toi</div></div></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.8rem;">
+      <a href="#contact" class="btn btn-outline-dark reveal delay-2">Un projet similaire en tête ? Parlons-en</a>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTS -->
+<section id="documents">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label reveal">Ressources</p>
+    <h2 class="section-title reveal delay-1">Documents</h2>
+    <div class="divider reveal delay-2"></div>
+    <p class="section-intro reveal delay-2">Modèles, guides, magazines et outils produits par <strong>IMAGYNE</strong>, <em>mis à disposition progressivement.</em></p>
+    <div class="docs-grid">
+
+      <a href="https://drive.google.com/file/d/1bikMCJjTICtVhW2e-BPlkriJucIihepj/view" target="_blank" class="doc-card reveal delay-1">
+        <div style="width:100%;aspect-ratio:3/4;overflow:hidden;border-radius:12px 12px 0 0;">
+          <img src="https://drive.google.com/thumbnail?id=1bikMCJjTICtVhW2e-BPlkriJucIihepj&sz=w400"
+               style="width:100%;height:100%;object-fit:cover;object-position:top;"
+               alt="Livret de capitalisation" loading="lazy">
+        </div>
+        <div class="doc-body" style="padding-top:1rem;">
+          <p class="doc-desc"><strong>Livret de capitalisation, projet Citoyennes Engagées</strong><br>
+          <em>Accompagner au changement pour améliorer le respect des droits en milieu universitaire.</em></p>
+          <div class="doc-footer">
+            <span class="doc-date">2022 – 2024</span>
+            <span class="doc-btn">Consulter →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ESPACE RESERVE : retire ce bloc quand tu auras de vrais documents -->
+      <div class="doc-empty reveal delay-2">
+        📂 <strong>D'autres documents arrivent bientôt.</strong><br><br>
+        <em>PDF, Word, Excel, magazines et guides seront ajoutés progressivement.</em>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES TEASER -->
+<section id="articles-teaser">
+  <div style="max-width:700px;margin:0 auto;">
+    <p class="section-label reveal">Réflexions</p>
+    <h2 class="section-title reveal delay-1">Mes articles sur la communication</h2>
+    <div class="divider reveal delay-2" style="margin-left:auto;margin-right:auto;"></div>
+    <p class="reveal delay-2">
+      Un article par mois sur les enjeux de la communication en Afrique : analyses, tendances
+      et points de vue de terrain. Une manière pour moi d'affiner ma pensée et de me positionner
+      comme rédacteur et analyste.
+    </p>
+    <a href="articles.html" class="btn btn-primary reveal delay-3">Voir tous les articles →</a>
+  </div>
+</section>
+
+<!-- CONTACT FONDATEUR -->
+<section id="contact-fondateur">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label reveal">Parlons-en</p>
+    <h2 class="section-title reveal delay-1">Contact</h2>
+    <div class="divider reveal delay-2"></div>
+    <p class="section-intro reveal delay-2">Une envie de collaborer, un projet associatif, une question ? Écris-moi directement.</p>
+
+    <div class="cf-grid">
+      <div class="cf-info reveal delay-2">
+        <div class="cf-info-item">
+          <div class="cf-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="white" stroke-width="1.8"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg></div>
+          <div><strong>Email</strong><a href="mailto:jyoni48@gmail.com">jyoni48@gmail.com</a></div>
+        </div>
+        <div class="cf-info-item">
+          <div class="cf-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="white" stroke-width="1.8"><path d="M12 3a8 8 0 0 0-7 12l-1 4 4-1a8 8 0 1 0 4-15z"/><path d="M8.5 9.5c0 3 2.5 5.5 5.5 5.5"/></svg></div>
+          <div><strong>WhatsApp</strong><a href="https://wa.me/24162316035" target="_blank">+241 62 31 60 35</a></div>
+        </div>
+        <div class="cf-info-item">
+          <div class="cf-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="white" stroke-width="1.8"><path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div><strong>Localisation</strong><p>Libreville, Gabon</p></div>
+        </div>
+      </div>
+
+      <form class="cf-form reveal delay-3" onsubmit="return submitFounderForm(event)">
+        <div class="cf-group">
+          <label for="ff-name">Nom</label>
+          <input type="text" id="ff-name" required placeholder="Votre nom">
+        </div>
+        <div class="cf-group">
+          <label for="ff-email">Email</label>
+          <input type="email" id="ff-email" required placeholder="vous@exemple.com">
+        </div>
+        <div class="cf-group">
+          <label for="ff-message">Message</label>
+          <textarea id="ff-message" required placeholder="Votre message..."></textarea>
+        </div>
+        <button type="submit" class="cf-submit">Envoyer</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+  <p class="lightbox-caption" id="lightbox-caption"></p>
+</div>
+
+<footer>
+  <p><strong>Junior Yoni Tsango</strong>, portfolio personnel</p>
+  <p style="margin-top:.5rem;">Hébergé sur le site de <a href="index.html">IMAGYNE</a>, <em>colorons votre quotidien</em></p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold:.15 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+    document.getElementById('hamburger').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+      document.getElementById('hamburger').classList.remove('open');
+    });
+  });
+
+  function submitFounderForm(e) {
+    e.preventDefault();
+    const name = document.getElementById('ff-name').value;
+    const email = document.getElementById('ff-email').value;
+    const message = document.getElementById('ff-message').value;
+    const subject = encodeURIComponent('Contact depuis le portfolio');
+    const body = encodeURIComponent(`Nom : ${name}\nEmail : ${email}\n\nMessage :\n${message}`);
+    window.location.href = `mailto:jyoni48@gmail.com?subject=${subject}&body=${body}`;
+    return false;
+  }
+
+  function switchTab(tab, btn) {
+    document.querySelectorAll('.prod-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.prod-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + tab).classList.add('active');
+  }
+
+  function openLightbox(card) {
+    const img = card.querySelector('img');
+    const title = card.querySelector('.infog-title')?.textContent || '';
+    const meta = card.querySelector('.infog-meta')?.textContent || '';
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-caption').textContent = title + (meta ? ' · ' + meta : '');
+    document.getElementById('lightbox').classList.add('active');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+  }
+  document.getElementById('lightbox').addEventListener('click', (e) => {
+    if (e.target.id === 'lightbox') closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+  document.querySelectorAll('.infog-img-wrap img').forEach(img => {
+    img.addEventListener('contextmenu', e => e.preventDefault());
+  });
+</script>
+
+</body>
+</html>

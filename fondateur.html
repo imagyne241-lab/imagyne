@@ -56,7 +56,7 @@
     height:72px; transition:background .3s,box-shadow .3s;
   }
   nav#mainNav.scrolled { background:rgba(255,250,243,.95); backdrop-filter:blur(14px); box-shadow:0 4px 24px rgba(35,35,35,.08); border-bottom:1px solid var(--sand-dark); }
-  .nav-logo { font-family:'Fraunces',serif; font-weight:700; font-style:italic; font-size:1.25rem; color:#e8e3d8; text-decoration:none; transition:color .3s; }
+  .nav-logo { font-family:'Fraunces',serif; font-weight:700; font-style:italic; font-size:1.25rem; color:#e8e3d8; text-decoration:none; transition:color .3s; white-space:nowrap; flex-shrink:1; overflow:hidden; }
   nav#mainNav.scrolled .nav-logo { color:#a8a196; }
   .nav-logo span { color:var(--ochre); }
   nav#mainNav.scrolled .nav-logo span { color:var(--rust); }
@@ -169,7 +169,8 @@
 
   .infog-card { background:var(--white); border-radius:var(--radius); overflow:hidden; cursor:pointer; box-shadow:0 4px 20px rgba(35,35,35,.06); transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s; }
   .infog-card:hover { transform:translateY(-5px); box-shadow:0 20px 45px rgba(35,35,35,.14); }
-  .infog-img-wrap { aspect-ratio:1; overflow:hidden; }
+  .infog-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.4rem; max-width:1200px; margin:0 auto; }
+  .infog-img-wrap { aspect-ratio:16/9; overflow:hidden; }
   .infog-img-wrap img { width:100%; height:100%; object-fit:cover; }
   .infog-info { padding:1rem 1.1rem; }
   .infog-title { font-size:.85rem; font-weight:600; color:var(--ink); line-height:1.4; margin-bottom:.3rem; }
@@ -192,6 +193,21 @@
   .doc-footer { display:flex; justify-content:space-between; align-items:center; margin-top:1rem; padding-top:.9rem; border-top:1px solid var(--sand-dark); }
   .doc-date { font-size:.75rem; color:var(--muted); }
   .doc-btn { font-size:.78rem; font-weight:600; color:var(--rust); }
+
+  /* RESSOURCES */
+  #ressources { background:var(--cream); }
+  .res-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1.4rem; max-width:1200px; margin:0 auto; }
+  .res-card { background:var(--sand); border-radius:var(--radius); overflow:hidden; box-shadow:0 4px 20px rgba(35,35,35,.06); }
+  .res-header { display:flex; align-items:center; gap:.9rem; padding:1.3rem 1.3rem .9rem; }
+  .res-icon { width:42px; height:42px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0; color:#fff; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:.75rem; }
+  .res-icon.xlsx { background:#1d6f42; }
+  .res-icon.docx { background:#2b579a; }
+  .res-icon.pdf { background:var(--rust); }
+  .res-type { font-size:.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; }
+  .res-title { font-family:'Fraunces',serif; font-weight:700; font-size:.92rem; color:var(--ink); line-height:1.4; }
+  .res-body { padding:0 1.3rem 1.3rem; }
+  .res-desc { font-size:.83rem; color:var(--muted); line-height:1.6; }
+  .res-soon { display:inline-block; margin-top:.8rem; font-size:.72rem; font-weight:600; color:var(--ochre); text-transform:uppercase; letter-spacing:.05em; }
 
   /* ARTICLES TEASER */
   #articles-teaser { background:var(--ink); color:#fff; text-align:center; }
@@ -233,6 +249,7 @@
 
   @media (max-width:768px) {
     .nav-hamburger { display:flex; }
+    .nav-logo { font-size:1rem; }
     .nav-links {
       display:none; position:fixed; top:64px; left:0; right:0;
       background:rgba(255,250,243,.98); backdrop-filter:blur(14px);
@@ -248,6 +265,10 @@
     .hero { height:64vh; min-height:380px; }
     .about-grid { grid-template-columns:repeat(2,1fr); }
   }
+
+  @media (max-width:400px) {
+    .nav-logo { font-size:.82rem; }
+  }
 </style>
 </head>
 <body>
@@ -261,6 +282,7 @@
     <li><a href="#experience">Expérience</a></li>
     <li><a href="#productions">Réalisations</a></li>
     <li><a href="articles.html">Articles</a></li>
+    <li><a href="#ressources">Ressources</a></li>
     <li><a href="#contact-fondateur">Contact</a></li>
     <li><a href="index.html" class="nav-imagyne-link">Voir IMAGYNE →</a></li>
   </ul>
@@ -291,7 +313,7 @@
       <div class="diapo-caption">Festival des Solidarités, séance avec les jeunes bénéficiaires</div>
     </div>
     <div class="diapo-slide">
-      <img src="portfolio-carousel-2.jpg" alt="Observation électorale">
+      <img src="portfolio-carousel-2.jpg" alt="Observation électorale" style="object-position:center 20%;">
       <div class="diapo-caption">Observateur électoral accrédité, Réseau des Observateurs Citoyens</div>
     </div>
     <div class="diapo-slide">
@@ -302,11 +324,16 @@
       <img src="portfolio-carousel-4.jpg" alt="Junior Yoni Tsango">
       <div class="diapo-caption">Junior Yoni Tsango</div>
     </div>
+    <div class="diapo-slide">
+      <img src="imagyne-carousel-2.webp" alt="Sensibilisation citoyenne">
+      <div class="diapo-caption">Sensibilisation citoyenne et lutte contre la désinformation</div>
+    </div>
     <div class="diapo-dots">
       <button class="diapo-dot active" onclick="goToDiapo('diapoFounder',0)"></button>
       <button class="diapo-dot" onclick="goToDiapo('diapoFounder',1)"></button>
       <button class="diapo-dot" onclick="goToDiapo('diapoFounder',2)"></button>
       <button class="diapo-dot" onclick="goToDiapo('diapoFounder',3)"></button>
+      <button class="diapo-dot" onclick="goToDiapo('diapoFounder',4)"></button>
     </div>
   </div>
 </section>
@@ -607,6 +634,88 @@
   </div>
 </section>
 
+<!-- RESSOURCES -->
+<section id="ressources">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label reveal">Boîte à outils</p>
+    <h2 class="section-title reveal delay-1">Ressources pour communicants</h2>
+    <div class="divider reveal delay-2"></div>
+    <p class="section-intro reveal delay-2">
+      Des modèles Word et Excel prêts à l'emploi pour aider les organisations et les jeunes
+      communicants à structurer leur communication. Téléchargement gratuit, à venir progressivement.
+    </p>
+    <div class="res-grid">
+
+      <div class="res-card reveal delay-1">
+        <div class="res-header">
+          <div class="res-icon docx">DOC</div>
+          <div><div class="res-type">Word</div><div class="res-title">Modèle de plan de communication</div></div>
+        </div>
+        <div class="res-body">
+          <p class="res-desc">Trame complète pour préparer une campagne ou un plan de communication annuel : objectifs, cibles, messages, canaux, calendrier.</p>
+          <span class="res-soon">Bientôt disponible</span>
+        </div>
+      </div>
+
+      <div class="res-card reveal delay-2">
+        <div class="res-header">
+          <div class="res-icon xlsx">XLS</div>
+          <div><div class="res-type">Excel</div><div class="res-title">Check-list de lancement de campagne</div></div>
+        </div>
+        <div class="res-body">
+          <p class="res-desc">Liste de vérification prête à l'emploi pour ne rien oublier avant, pendant et après une campagne de communication.</p>
+          <span class="res-soon">Bientôt disponible</span>
+        </div>
+      </div>
+
+      <div class="res-card reveal delay-3">
+        <div class="res-header">
+          <div class="res-icon docx">DOC</div>
+          <div><div class="res-type">Word</div><div class="res-title">Modèle de communiqué de presse</div></div>
+        </div>
+        <div class="res-body">
+          <p class="res-desc">Structure professionnelle prête à personnaliser pour annoncer un événement, un projet ou un résultat auprès des médias.</p>
+          <span class="res-soon">Bientôt disponible</span>
+        </div>
+      </div>
+
+      <div class="res-card reveal delay-1">
+        <div class="res-header">
+          <div class="res-icon xlsx">XLS</div>
+          <div><div class="res-type">Excel</div><div class="res-title">Calendrier éditorial réseaux sociaux</div></div>
+        </div>
+        <div class="res-body">
+          <p class="res-desc">Grille de planification mensuelle pour organiser ses publications par plateforme, thématique et format.</p>
+          <span class="res-soon">Bientôt disponible</span>
+        </div>
+      </div>
+
+      <div class="res-card reveal delay-2">
+        <div class="res-header">
+          <div class="res-icon xlsx">XLS</div>
+          <div><div class="res-type">Excel</div><div class="res-title">Budget prévisionnel de communication</div></div>
+        </div>
+        <div class="res-body">
+          <p class="res-desc">Tableau simple pour estimer et suivre les coûts d'une campagne : production, diffusion, imprévus.</p>
+          <span class="res-soon">Bientôt disponible</span>
+        </div>
+      </div>
+
+      <div class="res-card reveal delay-3">
+        <div class="res-header">
+          <div class="res-icon docx">DOC</div>
+          <div><div class="res-type">Word</div><div class="res-title">Rapport de fin de campagne</div></div>
+        </div>
+        <div class="res-body">
+          <p class="res-desc">Trame pour présenter les résultats d'une campagne à une équipe, un partenaire ou un bailleur de fonds.</p>
+          <span class="res-soon">Bientôt disponible</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ARTICLES TEASER -->
 <section id="articles-teaser">
   <div style="max-width:700px;margin:0 auto;">
@@ -660,6 +769,7 @@
           <textarea id="ff-message" required placeholder="Votre message..."></textarea>
         </div>
         <button type="submit" class="cf-submit">Envoyer</button>
+        <p id="ff-status" style="display:none;background:#e8f5ef;color:var(--rust);padding:.65rem 1rem;border-radius:8px;font-size:.82rem;margin-top:.8rem;text-align:center;"></p>
       </form>
     </div>
   </div>
@@ -721,12 +831,39 @@
 
   function submitFounderForm(e) {
     e.preventDefault();
+    const btn = e.target.querySelector('.cf-submit');
     const name = document.getElementById('ff-name').value;
     const email = document.getElementById('ff-email').value;
     const message = document.getElementById('ff-message').value;
-    const subject = encodeURIComponent('Contact depuis le portfolio');
-    const body = encodeURIComponent(`Nom : ${name}\nEmail : ${email}\n\nMessage :\n${message}`);
-    window.location.href = `mailto:jyoni48@gmail.com?subject=${subject}&body=${body}`;
+
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours...';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'FOUNDER_ACCESS_KEY',
+        subject: 'Contact depuis le portfolio',
+        from_name: name,
+        email: email,
+        message: message
+      })
+    })
+    .then(r => r.json())
+    .then(data => {
+      if (data.success) {
+        btn.textContent = 'Message envoyé ✓';
+        e.target.reset();
+        document.getElementById('ff-status').textContent = 'Merci, votre message a bien été envoyé.';
+        document.getElementById('ff-status').style.display = 'block';
+      } else {
+        btn.textContent = 'Erreur, réessayez';
+      }
+    })
+    .catch(() => { btn.textContent = 'Erreur, réessayez'; })
+    .finally(() => { setTimeout(() => { btn.disabled = false; btn.textContent = 'Envoyer'; }, 3000); });
+
     return false;
   }
 

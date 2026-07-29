@@ -281,10 +281,6 @@
       <img src="imagyne-carousel-1.png" alt="Production audiovisuelle et création graphique">
       <div class="diapo-caption">Production audiovisuelle et création graphique</div>
     </div>
-    <div class="diapo-slide">
-      <img src="imagyne-carousel-2.webp" alt="Sensibilisation citoyenne">
-      <div class="diapo-caption">Sensibilisation citoyenne et lutte contre la désinformation</div>
-    </div>
     <div class="diapo-slide contain-slide">
       <img src="imagyne-carousel-3.png" alt="IMAGYNE">
       <div class="diapo-caption">IMAGYNE, colorons votre quotidien</div>
@@ -297,7 +293,6 @@
       <button class="diapo-dot active" onclick="goToDiapo('diapoImagyne',0)"></button>
       <button class="diapo-dot" onclick="goToDiapo('diapoImagyne',1)"></button>
       <button class="diapo-dot" onclick="goToDiapo('diapoImagyne',2)"></button>
-      <button class="diapo-dot" onclick="goToDiapo('diapoImagyne',3)"></button>
     </div>
   </div>
 </section>
@@ -462,21 +457,21 @@
           <div class="contact-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="1.8"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg></div>
           <div>
             <strong>Email</strong>
-            <a href="mailto:jyoni48@gmail.com">jyoni48@gmail.com</a>
+            <a href="mailto:imagyne241@gmail.com">imagyne241@gmail.com</a>
           </div>
         </div>
         <div class="contact-info-item">
           <div class="contact-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="1.8"><path d="M12 3a8 8 0 0 0-7 12l-1 4 4-1a8 8 0 1 0 4-15z"/><path d="M8.5 9.5c0 3 2.5 5.5 5.5 5.5"/></svg></div>
           <div>
             <strong>WhatsApp</strong>
-            <a href="https://wa.me/24162316035" target="_blank">+241 62 31 60 35</a>
+            <a href="https://wa.me/24162275282" target="_blank">+241 62 27 52 82</a>
           </div>
         </div>
         <div class="contact-info-item">
           <div class="contact-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="1.8"><path d="M6 3h3l1.5 5-2 1.5a11 11 0 0 0 5 5l1.5-2 5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg></div>
           <div>
             <strong>Téléphone</strong>
-            <a href="tel:+24166754457">+241 66 75 44 57</a>
+            <a href="tel:+24162275282">+241 62 27 52 82</a>
           </div>
         </div>
         <div class="contact-info-item">
@@ -521,7 +516,8 @@
           <textarea id="cf-message" name="message" required placeholder="Décrivez votre projet en quelques mots..."></textarea>
         </div>
         <button type="submit" class="form-submit">Envoyer le message</button>
-        <p class="form-note">En envoyant ce message, votre client mail par défaut s'ouvrira avec les informations pré-remplies.</p>
+        <p id="cf-status" style="display:none;background:#e8f5ef;color:#0b6e4f;padding:.7rem 1rem;border-radius:8px;font-size:.85rem;margin-top:.9rem;text-align:center;"></p>
+        <p class="form-note">Votre message est envoyé directement, sans quitter le site.</p>
       </form>
     </div>
   </div>
@@ -590,17 +586,41 @@
   // Contact form -> mailto
   function submitContactForm(e) {
     e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
     const name = document.getElementById('cf-name').value;
     const org = document.getElementById('cf-org').value;
     const email = document.getElementById('cf-email').value;
     const service = document.getElementById('cf-service').value;
     const message = document.getElementById('cf-message').value;
 
-    const subject = encodeURIComponent(`Demande de devis : ${service}`);
-    const body = encodeURIComponent(
-      `Nom : ${name}\nOrganisation : ${org || 'N/A'}\nEmail : ${email}\nService souhaité : ${service}\n\nMessage :\n${message}`
-    );
-    window.location.href = `mailto:jyoni48@gmail.com?subject=${subject}&body=${body}`;
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours...';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'IMAGYNE_ACCESS_KEY',
+        subject: `Demande de devis : ${service}`,
+        from_name: name,
+        email: email,
+        message: `Nom : ${name}\nOrganisation : ${org || 'N/A'}\nService souhaité : ${service}\n\nMessage :\n${message}`
+      })
+    })
+    .then(r => r.json())
+    .then(data => {
+      if (data.success) {
+        btn.textContent = 'Message envoyé ✓';
+        e.target.reset();
+        document.getElementById('cf-status').textContent = 'Merci, votre message a bien été envoyé. Nous revenons vers vous sous 48h.';
+        document.getElementById('cf-status').style.display = 'block';
+      } else {
+        btn.textContent = 'Erreur, réessayez';
+      }
+    })
+    .catch(() => { btn.textContent = 'Erreur, réessayez'; })
+    .finally(() => { setTimeout(() => { btn.disabled = false; btn.textContent = 'Envoyer le message'; }, 3000); });
+
     return false;
   }
 </script>

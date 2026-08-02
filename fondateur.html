@@ -56,7 +56,7 @@
     height:72px; transition:background .3s,box-shadow .3s;
   }
   nav#mainNav.scrolled { background:rgba(255,250,243,.95); backdrop-filter:blur(14px); box-shadow:0 4px 24px rgba(35,35,35,.08); border-bottom:1px solid var(--sand-dark); }
-  .nav-logo { font-family:'Fraunces',serif; font-weight:700; font-style:italic; font-size:1.25rem; color:#e8e3d8; text-decoration:none; transition:color .3s; white-space:nowrap; flex-shrink:1; overflow:hidden; }
+  .nav-logo { font-family:'Fraunces',serif; font-weight:700; font-style:italic; font-size:1.25rem; color:#e8e3d8; text-decoration:none; transition:color .3s; white-space:nowrap; flex-shrink:1; min-width:0; overflow:hidden; text-overflow:ellipsis; }
   nav#mainNav.scrolled .nav-logo { color:#a8a196; }
   .nav-logo span { color:var(--ochre); }
   nav#mainNav.scrolled .nav-logo span { color:var(--rust); }
@@ -247,7 +247,7 @@
   footer strong { color:#fff; font-family:'Fraunces',serif; font-style:italic; }
   footer a { color:var(--ochre); text-decoration:none; }
 
-  @media (max-width:768px) {
+  @media (max-width:1100px) {
     .nav-hamburger { display:flex; }
     .nav-logo { font-size:1rem; }
     .nav-links {
@@ -843,7 +843,7 @@
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        access_key: 'db8ca462-a7b4-4bb8-ade1-ef28ab85014a',
+        access_key: 'FOUNDER_ACCESS_KEY',
         subject: 'Contact depuis le portfolio',
         from_name: name,
         email: email,

@@ -175,6 +175,22 @@
   .offre-list li { font-size:.88rem; color:#333; padding:.5rem 0; border-bottom:1px solid var(--off-white); display:flex; gap:.6rem; }
   .offre-list li::before { content:'✓'; color:var(--magenta); font-weight:700; }
 
+  /* BOUTIQUE */
+  #boutique { background:var(--off-white); }
+  .boutique-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:1.4rem; max-width:1200px; margin:0 auto; }
+  .prod-card-shop { background:#fff; border:1px solid var(--lilac); border-radius:var(--radius); overflow:hidden; box-shadow:0 4px 20px rgba(43,47,90,.06); transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s; }
+  .prod-card-shop:hover { transform:translateY(-5px); box-shadow:0 20px 45px rgba(43,47,90,.14); }
+  .prod-card-header { display:flex; align-items:center; gap:.8rem; padding:1.2rem 1.2rem .8rem; }
+  .prod-icon { width:38px; height:38px; border-radius:9px; display:flex; align-items:center; justify-content:center; color:#fff; font-family:'Montserrat',sans-serif; font-weight:700; font-size:.7rem; flex-shrink:0; }
+  .prod-icon.xlsx { background:#1d6f42; }
+  .prod-icon.docx { background:#2b579a; }
+  .prod-badge { display:inline-block; background:var(--magenta); color:#fff; font-size:.62rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:.2rem .6rem; border-radius:999px; margin-bottom:.3rem; }
+  .prod-card-title { font-family:'Montserrat',sans-serif; font-weight:700; font-size:.88rem; color:var(--navy); line-height:1.35; }
+  .prod-card-body { padding:0 1.2rem 1.2rem; }
+  .prod-card-desc { font-size:.8rem; color:var(--muted); line-height:1.55; margin-bottom:1rem; }
+  .prod-buy-btn { display:block; text-align:center; background:var(--navy); color:#fff; text-decoration:none; padding:.6rem; border-radius:var(--radius-sm); font-family:'Montserrat',sans-serif; font-weight:700; font-size:.75rem; letter-spacing:.05em; text-transform:uppercase; transition:background .25s; }
+  .prod-buy-btn:hover { background:var(--magenta); }
+
   /* CONFIANCE */
   #confiance-badges { display:flex; flex-wrap:wrap; justify-content:center; gap:1.2rem; max-width:1000px; margin:0 auto; }
   .confiance-item { font-family:'Montserrat',sans-serif; font-weight:800; font-size:1rem; color:var(--violet); padding:.9rem 1.6rem; border:1px solid var(--lilac); border-radius:12px; background:#fff; }
@@ -253,6 +269,7 @@
     <li><a href="#histoire">Notre histoire</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#offres">Offres</a></li>
+    <li><a href="#boutique">Boutique</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="fondateur.html" class="nav-founder-link">Portfolio du fondateur</a></li>
   </ul>
@@ -443,6 +460,187 @@
   </div>
 </section>
 
+<!-- BOUTIQUE -->
+<section id="boutique">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label reveal">Modèles premium</p>
+    <h2 class="section-title reveal delay-1">Boutique IMAGYNE</h2>
+    <div class="divider reveal delay-2"></div>
+    <p class="section-intro reveal delay-2">
+      Des modèles Word et Excel complets et prêts à personnaliser, conçus pour les organisations
+      qui veulent structurer leur communication sans repartir de zéro. Achat sécurisé via Chariow.
+    </p>
+    <div class="boutique-grid">
+
+      <div class="prod-card-shop reveal delay-1">
+        <div class="prod-card-header">
+          <div class="prod-icon xlsx">XLS</div>
+          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Plan de communication</div></div>
+        </div>
+        <div class="prod-card-body">
+          <p class="prod-card-desc">Version complète avec exemples remplis, formules automatiques et guide d'utilisation.</p>
+          <a href="LIEN-CHARIOW-PLAN-COMMUNICATION" target="_blank" class="prod-buy-btn">Acheter →</a>
+        </div>
+      </div>
+
+      <div class="prod-card-shop reveal delay-2">
+        <div class="prod-card-header">
+          <div class="prod-icon docx">DOC</div>
+          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Plan de communication de crise</div></div>
+        </div>
+        <div class="prod-card-body">
+          <p class="prod-card-desc">Version complète avec scénarios types et messages pré-rédigés à adapter.</p>
+          <a href="LIEN-CHARIOW-PLAN-CRISE" target="_blank" class="prod-buy-btn">Acheter →</a>
+        </div>
+      </div>
+
+      <div class="prod-card-shop reveal delay-3">
+        <div class="prod-card-header">
+          <div class="prod-icon docx">DOC</div>
+          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Communiqué de presse</div></div>
+        </div>
+        <div class="prod-card-body">
+          <p class="prod-card-desc">Version complète avec plusieurs variantes selon le type d'annonce.</p>
+          <a href="LIEN-CHARIOW-COMMUNIQUE-PRESSE" target="_blank" class="prod-buy-btn">Acheter →</a>
+        </div>
+      </div>
+
+      <div class="prod-card-shop reveal delay-1">
+        <div class="prod-card-header">
+          <div class="prod-icon docx">DOC</div>
+          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Charte éditoriale</div></div>
+        </div>
+        <div class="prod-card-body">
+          <p class="prod-card-desc">Version complète avec exemples de tons, de formats et de règles éditoriales.</p>
+          <a href="LIEN-CHARIOW-CHARTE-EDITORIALE" target="_blank" class="prod-buy-btn">Acheter →</a>
+        </div>
+      </div>
+
+      <div class="prod-card-shop reveal delay-2">
+        <div class="prod-card-header">
+          <div class="prod-icon docx">DOC</div>
+          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Rapport annuel</div></div>
+        </div>
+        <div class="prod-card-body">
+          <p class="prod-card-desc">Version complète avec mise en page prête à l'emploi et sections pré-remplies.</p>
+          <a href="LIEN-CHARIOW-RAPPORT-ANNUEL" target="_blank" class="prod-buy-btn">Acheter →</a>
+        </div>
+      </div>
+
+      <div class="prod-card-shop reveal delay-3">
+        <div class="prod-card-header">
+          <div class="prod-icon docx">DOC</div>
+          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Rapport de campagne</div></div>
+        </div>
+        <div class="prod-card-body">
+          <p class="prod-card-desc">Version complète avec graphiques et indicateurs pré-configurés.</p>
+          <a href="LIEN-CHARIOW-RAPPORT-CAMPAGNE" target="_blank" class="prod-buy-btn">Acheter →</a>
+        </div>
+      </div>
+
+      <div class="prod-card-shop reveal delay-1">
+        <div class="prod-card-header">
+          <div class="prod-icon xlsx">XLS</div>
+          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Check-list de campagne</div></div>
+        </div>
+        <div class="prod-card-body">
+          <p class="prod-card-desc">Version complète avec étapes détaillées avant, pendant et après la campagne.</p>
+          <a href="LIEN-CHARIOW-CHECKLIST" target="_blank" class="prod-buy-btn">Acheter →</a>
+        </div>
+      </div>
+
+      <div class="prod-card-shop reveal delay-2">
+        <div class="prod-card-header">
+          <div class="prod-icon xlsx">XLS</div>
+          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Calendrier éditorial</div></div>
+        </div>
+        <div class="prod-card-body">
+          <p class="prod-card-desc">Version complète avec vue annuelle, mensuelle et suivi de publication automatisé.</p>
+          <a href="LIEN-CHARIOW-CALENDRIER" target="_blank" class="prod-buy-btn">Acheter →</a>
+        </div>
+      </div>
+
+      <div class="prod-card-shop reveal delay-3">
+        <div class="prod-card-header">
+          <div class="prod-icon xlsx">XLS</div>
+          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Budget prévisionnel</div></div>
+        </div>
+        <div class="prod-card-body">
+          <p class="prod-card-desc">Version complète avec calculs automatiques et suivi des écarts budgétaires.</p>
+          <a href="LIEN-CHARIOW-BUDGET" target="_blank" class="prod-buy-btn">Acheter →</a>
+        </div>
+      </div>
+
+      <div class="prod-card-shop reveal delay-1">
+        <div class="prod-card-header">
+          <div class="prod-icon xlsx">XLS</div>
+          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Plan média</div></div>
+        </div>
+        <div class="prod-card-body">
+          <p class="prod-card-desc">Version complète avec répartition automatique du budget par canal.</p>
+          <a href="LIEN-CHARIOW-PLAN-MEDIA" target="_blank" class="prod-buy-btn">Acheter →</a>
+        </div>
+      </div>
+
+      <div class="prod-card-shop reveal delay-2">
+        <div class="prod-card-header">
+          <div class="prod-icon xlsx">XLS</div>
+          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Tableau de KPI</div></div>
+        </div>
+        <div class="prod-card-body">
+          <p class="prod-card-desc">Version complète avec graphiques automatiques et alertes de performance.</p>
+          <a href="LIEN-CHARIOW-KPI" target="_blank" class="prod-buy-btn">Acheter →</a>
+        </div>
+      </div>
+
+      <div class="prod-card-shop reveal delay-3">
+        <div class="prod-card-header">
+          <div class="prod-icon xlsx">XLS</div>
+          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Suivi des réseaux sociaux</div></div>
+        </div>
+        <div class="prod-card-body">
+          <p class="prod-card-desc">Version complète avec tableaux de bord par plateforme et calcul d'engagement.</p>
+          <a href="LIEN-CHARIOW-SUIVI-RS" target="_blank" class="prod-buy-btn">Acheter →</a>
+        </div>
+      </div>
+
+      <div class="prod-card-shop reveal delay-1">
+        <div class="prod-card-header">
+          <div class="prod-icon xlsx">XLS</div>
+          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Suivi des partenariats</div></div>
+        </div>
+        <div class="prod-card-body">
+          <p class="prod-card-desc">Version complète avec historique de contacts et rappels automatiques.</p>
+          <a href="LIEN-CHARIOW-PARTENARIATS" target="_blank" class="prod-buy-btn">Acheter →</a>
+        </div>
+      </div>
+
+      <div class="prod-card-shop reveal delay-2">
+        <div class="prod-card-header">
+          <div class="prod-icon xlsx">XLS</div>
+          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Veille médiatique</div></div>
+        </div>
+        <div class="prod-card-body">
+          <p class="prod-card-desc">Version complète avec grille de scoring et synthèse hebdomadaire automatisée.</p>
+          <a href="LIEN-CHARIOW-VEILLE" target="_blank" class="prod-buy-btn">Acheter →</a>
+        </div>
+      </div>
+
+      <div class="prod-card-shop reveal delay-3">
+        <div class="prod-card-header">
+          <div class="prod-icon xlsx">XLS</div>
+          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Base de contacts journalistes</div></div>
+        </div>
+        <div class="prod-card-body">
+          <p class="prod-card-desc">Version complète avec structure enrichie et filtres prêts à l'emploi.</p>
+          <a href="LIEN-CHARIOW-JOURNALISTES" target="_blank" class="prod-buy-btn">Acheter →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div style="max-width:1200px;margin:0 auto;">
@@ -600,7 +798,7 @@
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        access_key: 'a20bfddf-e513-4afe-a33c-b48b885443af',
+        access_key: 'IMAGYNE_ACCESS_KEY',
         subject: `Demande de devis : ${service}`,
         from_name: name,
         email: email,

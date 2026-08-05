@@ -197,7 +197,8 @@
   /* RESSOURCES */
   #ressources { background:var(--cream); }
   .res-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1.4rem; max-width:1200px; margin:0 auto; }
-  .res-card { background:var(--sand); border-radius:var(--radius); overflow:hidden; box-shadow:0 4px 20px rgba(35,35,35,.06); }
+  .res-card { background:var(--sand); border-radius:var(--radius); overflow:hidden; box-shadow:0 4px 20px rgba(35,35,35,.06); text-decoration:none; display:block; transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s; }
+  .res-card:hover { transform:translateY(-5px); box-shadow:0 20px 45px rgba(35,35,35,.14); }
   .res-header { display:flex; align-items:center; gap:.9rem; padding:1.3rem 1.3rem .9rem; }
   .res-icon { width:42px; height:42px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0; color:#fff; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:.75rem; }
   .res-icon.xlsx { background:#1d6f42; }
@@ -641,100 +642,166 @@
     <h2 class="section-title reveal delay-1">Ressources pour communicants</h2>
     <div class="divider reveal delay-2"></div>
     <p class="section-intro reveal delay-2">
-      Des modèles Word et Excel prêts à l'emploi pour aider les organisations et les jeunes
-      communicants à structurer leur communication. Téléchargement gratuit, à venir progressivement.
+      Des modèles Word et Excel prêts à l'emploi, conçus à partir de mon expérience de terrain,
+      pour aider les organisations et les jeunes communicants à structurer leur communication.
+      Téléchargement gratuit.
+    </p>
+    <p style="text-align:center;max-width:640px;margin:-1.5rem auto 2.5rem;font-size:.85rem;color:var(--muted);font-style:italic;">
+      Ce sont des modèles basiques (version Light), à adapter librement à votre contexte.
+      Des versions premium plus complètes sont disponibles à l'achat sur
+      <a href="index.html#boutique" style="color:var(--rust);font-weight:600;">la boutique IMAGYNE →</a>
     </p>
     <div class="res-grid">
 
-       <!-- 1. Calendrier Éditorial -->
-      <div class="res-card reveal delay-1">
+      <a href="res-plan-communication.xlsx" target="_blank" class="res-card reveal delay-1">
         <div class="res-header">
-          <div class="res-icon xlsx">XLSX</div>
-          <div>
-            <span class="res-type">Tableur</span>
-            <h3 class="res-title">Calendrier Éditorial RS</h3>
-          </div>
+          <div class="res-icon xlsx">XLS</div>
+          <div><div class="res-type">Excel</div><div class="res-title">Plan de communication</div></div>
         </div>
         <div class="res-body">
-          <p class="res-desc">Planning de publication pour réseaux sociaux avec gestion des canaux, contenus, visuels et KPIs.</p>
-          <a href="Calendrier_Editorial_Reseaux_Sociaux.xlsx" download class="btn btn-outline" style="margin-top:1rem;padding:.5rem 1rem;font-size:.78rem;">Télécharger (.xlsx)</a>
+          <p class="res-desc">Trame complète pour préparer une campagne ou un plan de communication annuel : objectifs, cibles, messages, canaux, calendrier.</p>
         </div>
-      </div>
+      </a>
 
-      <!-- 2. Budget Prévisionnel -->
-      <div class="res-card reveal delay-2">
+      <a href="res-plan-communication-crise.docx" target="_blank" class="res-card reveal delay-2">
         <div class="res-header">
-          <div class="res-icon xlsx">XLSX</div>
-          <div>
-            <span class="res-type">Tableur</span>
-            <h3 class="res-title">Budget Prévisionnel</h3>
-          </div>
+          <div class="res-icon docx">DOC</div>
+          <div><div class="res-type">Word</div><div class="res-title">Plan de communication de crise</div></div>
         </div>
         <div class="res-body">
-          <p class="res-desc">Tableau de calcul automatique des dépenses de communication avec graphique de répartition intégré.</p>
-          <a href="Budget_Previsionnel_Communication.xlsx" download class="btn btn-outline" style="margin-top:1rem;padding:.5rem 1rem;font-size:.78rem;">Télécharger (.xlsx)</a>
+          <p class="res-desc">Trame pour anticiper et structurer la réponse d'une organisation face à une crise, avant qu'elle n'éclate.</p>
         </div>
-      </div>
+      </a>
 
-      <!-- 3. Check-list Campagne -->
-      <div class="res-card reveal delay-3">
+      <a href="res-communique-presse.docx" target="_blank" class="res-card reveal delay-3">
         <div class="res-header">
-          <div class="res-icon xlsx">XLSX</div>
-          <div>
-            <span class="res-type">Tableur</span>
-            <h3 class="res-title">Check-list de Lancement</h3>
-          </div>
+          <div class="res-icon docx">DOC</div>
+          <div><div class="res-type">Word</div><div class="res-title">Communiqué de presse</div></div>
         </div>
         <div class="res-body">
-          <p class="res-desc">Matrice de suivi des tâches étape par étape (Avant-lancement, Jour J, Post-lancement).</p>
-          <a href="Checklist_Lancement_Campagne.xlsx" download class="btn btn-outline" style="margin-top:1rem;padding:.5rem 1rem;font-size:.78rem;">Télécharger (.xlsx)</a>
+          <p class="res-desc">Structure professionnelle prête à personnaliser pour annoncer un événement, un projet ou un résultat auprès des médias.</p>
         </div>
-      </div>
+      </a>
 
-      <!-- 4. Plan de Communication -->
-      <div class="res-card reveal delay-1">
+      <a href="res-charte-editoriale.docx" target="_blank" class="res-card reveal delay-1">
         <div class="res-header">
-          <div class="res-icon docx">DOCX</div>
-          <div>
-            <span class="res-type">Document</span>
-            <h3 class="res-title">Plan de Communication</h3>
-          </div>
+          <div class="res-icon docx">DOC</div>
+          <div><div class="res-type">Word</div><div class="res-title">Charte éditoriale</div></div>
         </div>
         <div class="res-body">
-          <p class="res-desc">Trame complète pour élaborer une stratégie globale : diagnostic, objectifs, personas et canaux.</p>
-          <a href="Modele_Plan_de_Communication.docx" download class="btn btn-outline" style="margin-top:1rem;padding:.5rem 1rem;font-size:.78rem;">Télécharger (.docx)</a>
+          <p class="res-desc">Document de référence pour fixer le ton, le style et les règles de communication d'une organisation.</p>
         </div>
-      </div>
+      </a>
 
-      <!-- 5. Communiqué de Presse -->
-      <div class="res-card reveal delay-2">
+      <a href="res-rapport-annuel.docx" target="_blank" class="res-card reveal delay-2">
         <div class="res-header">
-          <div class="res-icon docx">DOCX</div>
-          <div>
-            <span class="res-type">Document</span>
-            <h3 class="res-title">Communiqué de Presse</h3>
-          </div>
+          <div class="res-icon docx">DOC</div>
+          <div><div class="res-type">Word</div><div class="res-title">Rapport annuel</div></div>
         </div>
         <div class="res-body">
-          <p class="res-desc">Structure canonique prête à remplir pour rédiger des annonces presse percutantes.</p>
-          <a href="Modele_Communique_de_Presse.docx" download class="btn btn-outline" style="margin-top:1rem;padding:.5rem 1rem;font-size:.78rem;">Télécharger (.docx)</a>
+          <p class="res-desc">Trame pour présenter le bilan de communication d'une année complète à une équipe, un partenaire ou un bailleur.</p>
         </div>
-      </div>
+      </a>
 
-      <!-- 6. Rapport de Fin de Campagne -->
-      <div class="res-card reveal delay-3">
+      <a href="res-rapport-campagne.docx" target="_blank" class="res-card reveal delay-3">
         <div class="res-header">
-          <div class="res-icon docx">DOCX</div>
-          <div>
-            <span class="res-type">Document</span>
-            <h3 class="res-title">Rapport de Campagne</h3>
-          </div>
+          <div class="res-icon docx">DOC</div>
+          <div><div class="res-type">Word</div><div class="res-title">Rapport de campagne</div></div>
         </div>
         <div class="res-body">
-          <p class="res-desc">Modèle de bilan d'impact avec tableaux de performance et recommandations pour les bailleurs.</p>
-          <a href="Modele_Rapport_Fin_de_Campagne.docx" download class="btn btn-outline" style="margin-top:1rem;padding:.5rem 1rem;font-size:.78rem;">Télécharger (.docx)</a>
+          <p class="res-desc">Trame pour présenter les résultats d'une campagne ponctuelle, plus courte et plus ciblée que le rapport annuel.</p>
         </div>
-      </div>
+      </a>
+
+      <a href="res-checklist-campagne.xlsx" target="_blank" class="res-card reveal delay-1">
+        <div class="res-header">
+          <div class="res-icon xlsx">XLS</div>
+          <div><div class="res-type">Excel</div><div class="res-title">Check-list de campagne</div></div>
+        </div>
+        <div class="res-body">
+          <p class="res-desc">Liste de vérification prête à l'emploi pour ne rien oublier avant, pendant et après une campagne de communication.</p>
+        </div>
+      </a>
+
+      <a href="res-calendrier-editorial.xlsx" target="_blank" class="res-card reveal delay-2">
+        <div class="res-header">
+          <div class="res-icon xlsx">XLS</div>
+          <div><div class="res-type">Excel</div><div class="res-title">Calendrier éditorial</div></div>
+        </div>
+        <div class="res-body">
+          <p class="res-desc">Grille de planification pour organiser ses publications par plateforme, thématique et format.</p>
+        </div>
+      </a>
+
+      <a href="res-budget-previsionnel.xlsx" target="_blank" class="res-card reveal delay-3">
+        <div class="res-header">
+          <div class="res-icon xlsx">XLS</div>
+          <div><div class="res-type">Excel</div><div class="res-title">Budget prévisionnel</div></div>
+        </div>
+        <div class="res-body">
+          <p class="res-desc">Tableau simple pour estimer et suivre les coûts d'une campagne : production, diffusion, imprévus.</p>
+        </div>
+      </a>
+
+      <a href="res-plan-media.xlsx" target="_blank" class="res-card reveal delay-1">
+        <div class="res-header">
+          <div class="res-icon xlsx">XLS</div>
+          <div><div class="res-type">Excel</div><div class="res-title">Plan média</div></div>
+        </div>
+        <div class="res-body">
+          <p class="res-desc">Tableau pour répartir un budget et un message entre les différents canaux médias disponibles.</p>
+        </div>
+      </a>
+
+      <a href="res-tableau-kpi.xlsx" target="_blank" class="res-card reveal delay-2">
+        <div class="res-header">
+          <div class="res-icon xlsx">XLS</div>
+          <div><div class="res-type">Excel</div><div class="res-title">Tableau de KPI</div></div>
+        </div>
+        <div class="res-body">
+          <p class="res-desc">Grille pour suivre les indicateurs clés de performance d'une stratégie de communication dans le temps.</p>
+        </div>
+      </a>
+
+      <a href="res-suivi-reseaux-sociaux.xlsx" target="_blank" class="res-card reveal delay-3">
+        <div class="res-header">
+          <div class="res-icon xlsx">XLS</div>
+          <div><div class="res-type">Excel</div><div class="res-title">Suivi des réseaux sociaux</div></div>
+        </div>
+        <div class="res-body">
+          <p class="res-desc">Tableau pour suivre la performance de ses publications sur chaque plateforme, semaine après semaine.</p>
+        </div>
+      </a>
+
+      <a href="res-suivi-partenariats.xlsx" target="_blank" class="res-card reveal delay-1">
+        <div class="res-header">
+          <div class="res-icon xlsx">XLS</div>
+          <div><div class="res-type">Excel</div><div class="res-title">Suivi des partenariats</div></div>
+        </div>
+        <div class="res-body">
+          <p class="res-desc">Tableau pour centraliser et suivre l'état des relations avec les partenaires et organisations alliées.</p>
+        </div>
+      </a>
+
+      <a href="res-veille-mediatique.xlsx" target="_blank" class="res-card reveal delay-2">
+        <div class="res-header">
+          <div class="res-icon xlsx">XLS</div>
+          <div><div class="res-type">Excel</div><div class="res-title">Veille médiatique</div></div>
+        </div>
+        <div class="res-body">
+          <p class="res-desc">Grille pour suivre ce qui se dit dans les médias sur une organisation, un secteur ou un sujet donné.</p>
+        </div>
+      </a>
+
+      <a href="res-base-journalistes.xlsx" target="_blank" class="res-card reveal delay-3">
+        <div class="res-header">
+          <div class="res-icon xlsx">XLS</div>
+          <div><div class="res-type">Excel</div><div class="res-title">Base de contacts journalistes</div></div>
+        </div>
+        <div class="res-body">
+          <p class="res-desc">Fichier de contacts prêt à personnaliser pour centraliser ses relations presse et médias.</p>
+        </div>
+      </a>
 
     </div>
   </div>

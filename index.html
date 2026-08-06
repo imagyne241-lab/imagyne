@@ -96,8 +96,20 @@
     position:relative; overflow:hidden;
   }
   .hero::before {
-    content:''; position:absolute; inset:0; opacity:.5;
+    content:''; position:absolute; inset:0; opacity:.5; z-index:1;
     background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='30,5 55,50 5,50' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='1.5'/%3E%3C/svg%3E");
+  }
+  /* Calque image de fond, très faible opacité, entre le dégradé et le texte.
+     Remplace l'URL de background-image par ton visuel. object-fit équivalent
+     via background-size:cover assure un rendu fluide sur PC, tablette et mobile. */
+  .hero-bg-image {
+    position:absolute; inset:0; z-index:1;
+    background-image:url("TON-IMAGE-ICI.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    opacity:.12;
+    pointer-events:none;
   }
   .hero-inner { max-width:1200px; margin:0 auto; position:relative; z-index:2; text-align:center; }
   .hero-tagline { font-family:'Montserrat',sans-serif; font-style:italic; font-weight:600; font-size:1rem; color:var(--magenta); letter-spacing:.04em; margin-bottom:1.2rem; }
@@ -277,6 +289,7 @@
 
 <!-- HERO -->
 <section class="hero" id="home">
+  <div class="hero-bg-image"></div>
   <div class="hero-inner">
     <p class="hero-tagline reveal">colorons votre quotidien</p>
     <h1 class="reveal delay-1">Communication & solutions numériques <span>pour les organisations qui font bouger le Gabon.</span></h1>
@@ -479,7 +492,7 @@
         </div>
         <div class="prod-card-body">
           <p class="prod-card-desc">Version complète avec exemples remplis, formules automatiques et guide d'utilisation.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_5iyvjfjo" target="_blank" class="prod-buy-btn">Acheter →</a>
+          <a href="LIEN-CHARIOW-PLAN-COMMUNICATION" target="_blank" class="prod-buy-btn">Acheter →</a>
         </div>
       </div>
 
@@ -490,7 +503,7 @@
         </div>
         <div class="prod-card-body">
           <p class="prod-card-desc">Version complète avec scénarios types et messages pré-rédigés à adapter.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_m826w4f1" target="_blank" class="prod-buy-btn">Acheter →</a>
+          <a href="LIEN-CHARIOW-PLAN-CRISE" target="_blank" class="prod-buy-btn">Acheter →</a>
         </div>
       </div>
 
@@ -501,7 +514,7 @@
         </div>
         <div class="prod-card-body">
           <p class="prod-card-desc">Version complète avec plusieurs variantes selon le type d'annonce.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_76s5j7dw" target="_blank" class="prod-buy-btn">Acheter →</a>
+          <a href="LIEN-CHARIOW-COMMUNIQUE-PRESSE" target="_blank" class="prod-buy-btn">Acheter →</a>
         </div>
       </div>
 
@@ -512,7 +525,7 @@
         </div>
         <div class="prod-card-body">
           <p class="prod-card-desc">Version complète avec exemples de tons, de formats et de règles éditoriales.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_hiqcrdau" target="_blank" class="prod-buy-btn">Acheter →</a>
+          <a href="LIEN-CHARIOW-CHARTE-EDITORIALE" target="_blank" class="prod-buy-btn">Acheter →</a>
         </div>
       </div>
 
@@ -523,7 +536,7 @@
         </div>
         <div class="prod-card-body">
           <p class="prod-card-desc">Version complète avec mise en page prête à l'emploi et sections pré-remplies.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_odupoucx" target="_blank" class="prod-buy-btn">Acheter →</a>
+          <a href="LIEN-CHARIOW-RAPPORT-ANNUEL" target="_blank" class="prod-buy-btn">Acheter →</a>
         </div>
       </div>
 
@@ -534,7 +547,7 @@
         </div>
         <div class="prod-card-body">
           <p class="prod-card-desc">Version complète avec graphiques et indicateurs pré-configurés.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_29yz7dz3" target="_blank" class="prod-buy-btn">Acheter →</a>
+          <a href="LIEN-CHARIOW-RAPPORT-CAMPAGNE" target="_blank" class="prod-buy-btn">Acheter →</a>
         </div>
       </div>
 
@@ -545,7 +558,7 @@
         </div>
         <div class="prod-card-body">
           <p class="prod-card-desc">Version complète avec étapes détaillées avant, pendant et après la campagne.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_f93onmto" target="_blank" class="prod-buy-btn">Acheter →</a>
+          <a href="LIEN-CHARIOW-CHECKLIST" target="_blank" class="prod-buy-btn">Acheter →</a>
         </div>
       </div>
 
@@ -556,7 +569,7 @@
         </div>
         <div class="prod-card-body">
           <p class="prod-card-desc">Version complète avec vue annuelle, mensuelle et suivi de publication automatisé.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_9v7025dg" target="_blank" class="prod-buy-btn">Acheter →</a>
+          <a href="LIEN-CHARIOW-CALENDRIER" target="_blank" class="prod-buy-btn">Acheter →</a>
         </div>
       </div>
 
@@ -567,7 +580,7 @@
         </div>
         <div class="prod-card-body">
           <p class="prod-card-desc">Version complète avec calculs automatiques et suivi des écarts budgétaires.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_58o49u9w" target="_blank" class="prod-buy-btn">Acheter →</a>
+          <a href="LIEN-CHARIOW-BUDGET" target="_blank" class="prod-buy-btn">Acheter →</a>
         </div>
       </div>
 
@@ -578,7 +591,7 @@
         </div>
         <div class="prod-card-body">
           <p class="prod-card-desc">Version complète avec répartition automatique du budget par canal.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_h4eu7n9i" target="_blank" class="prod-buy-btn">Acheter →</a>
+          <a href="LIEN-CHARIOW-PLAN-MEDIA" target="_blank" class="prod-buy-btn">Acheter →</a>
         </div>
       </div>
 
@@ -589,7 +602,7 @@
         </div>
         <div class="prod-card-body">
           <p class="prod-card-desc">Version complète avec graphiques automatiques et alertes de performance.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_ejvj5y65" target="_blank" class="prod-buy-btn">Acheter →</a>
+          <a href="LIEN-CHARIOW-KPI" target="_blank" class="prod-buy-btn">Acheter →</a>
         </div>
       </div>
 
@@ -600,7 +613,7 @@
         </div>
         <div class="prod-card-body">
           <p class="prod-card-desc">Version complète avec tableaux de bord par plateforme et calcul d'engagement.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_z423kqvb" target="_blank" class="prod-buy-btn">Acheter →</a>
+          <a href="LIEN-CHARIOW-SUIVI-RS" target="_blank" class="prod-buy-btn">Acheter →</a>
         </div>
       </div>
 
@@ -611,7 +624,7 @@
         </div>
         <div class="prod-card-body">
           <p class="prod-card-desc">Version complète avec historique de contacts et rappels automatiques.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_15d323w8" target="_blank" class="prod-buy-btn">Acheter →</a>
+          <a href="LIEN-CHARIOW-PARTENARIATS" target="_blank" class="prod-buy-btn">Acheter →</a>
         </div>
       </div>
 
@@ -622,7 +635,7 @@
         </div>
         <div class="prod-card-body">
           <p class="prod-card-desc">Version complète avec grille de scoring et synthèse hebdomadaire automatisée.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_jeg4cxtw" target="_blank" class="prod-buy-btn">Acheter →</a>
+          <a href="LIEN-CHARIOW-VEILLE" target="_blank" class="prod-buy-btn">Acheter →</a>
         </div>
       </div>
 
@@ -633,7 +646,7 @@
         </div>
         <div class="prod-card-body">
           <p class="prod-card-desc">Version complète avec structure enrichie et filtres prêts à l'emploi.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_eawa8wxz" target="_blank" class="prod-buy-btn">Acheter →</a>
+          <a href="LIEN-CHARIOW-JOURNALISTES" target="_blank" class="prod-buy-btn">Acheter →</a>
         </div>
       </div>
 

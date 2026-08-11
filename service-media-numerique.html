@@ -131,6 +131,21 @@
     .nav-links a::after { display:none; }
     .nav-founder-link { margin:1rem 2rem; text-align:center; }
   }
+
+  .service-detail { background:var(--white); }
+  .service-includes { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1.4rem; max-width:1000px; margin:0 auto 4rem; }
+  .include-card { background:var(--off-white); border-radius:var(--radius); padding:1.6rem; }
+  .include-card-title { font-family:'Montserrat',sans-serif; font-weight:700; font-size:.95rem; color:var(--navy); margin-bottom:.5rem; }
+  .include-card-desc { font-size:.85rem; color:var(--muted); line-height:1.6; }
+
+  #realisations { background:var(--off-white); }
+  .realisations-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.6rem; max-width:1100px; margin:0 auto; }
+  .realisation-empty {
+    grid-column:1/-1; text-align:center; background:#fff; border:2px dashed var(--lilac);
+    border-radius:var(--radius); padding:3rem 2rem; color:var(--muted);
+  }
+  .realisation-empty p { font-size:.95rem; line-height:1.7; max-width:480px; margin:0 auto; }
+  .realisation-empty strong { color:var(--navy); display:block; margin-bottom:.5rem; font-size:1.05rem; }
 </style>
 </head>
 <body>

@@ -159,14 +159,16 @@
     background:var(--white); border:1px solid var(--lilac); border-radius:var(--radius);
     overflow:hidden; box-shadow:0 4px 20px rgba(43,47,90,.06);
     transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s;
+    display:flex; flex-direction:column;
   }
   .service-card:hover { transform:translateY(-6px); box-shadow:0 24px 55px rgba(43,47,90,.15); }
-  /* CORRECTION 7 : hauteur fixée via CSS, dimensions ajoutées dans le HTML */
   .service-img { width:100%; height:160px; object-fit:cover; }
-  .service-body { padding:1.6rem 1.6rem 1.8rem; }
+  .service-body { padding:1.6rem 1.6rem 1.8rem; flex:1; display:flex; flex-direction:column; }
   .service-name { font-family:'Montserrat',sans-serif; font-weight:800; font-size:1.05rem; color:var(--navy); margin-bottom:.3rem; }
   .service-sub { font-size:.78rem; color:var(--magenta); font-weight:700; text-transform:uppercase; letter-spacing:.05em; margin-bottom:.8rem; }
-  .service-desc { font-size:.92rem; color:var(--muted); line-height:1.65; }
+  .service-desc { font-size:.92rem; color:var(--muted); line-height:1.65; margin-bottom:1.2rem; flex:1; }
+  .service-link { font-family:'Montserrat',sans-serif; font-size:.78rem; font-weight:700; color:var(--magenta); text-decoration:none; letter-spacing:.03em; }
+  .service-link:hover { color:var(--navy); }
 
   /* OFFRES */
   #offres { background:var(--off-white); }
@@ -181,9 +183,9 @@
   .offre-list li { font-size:.88rem; color:#333; padding:.5rem 0; border-bottom:1px solid var(--off-white); display:flex; gap:.6rem; }
   .offre-list li::before { content:'✓'; color:var(--magenta); font-weight:700; }
 
-  /* BOUTIQUE */
+  /* BOUTIQUE TEASER */
   #boutique { background:var(--off-white); }
-  .boutique-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:1.4rem; max-width:1200px; margin:0 auto; }
+  .boutique-teaser-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.4rem; max-width:900px; margin:0 auto; }
   .prod-card-shop { background:#fff; border:1px solid var(--lilac); border-radius:var(--radius); overflow:hidden; box-shadow:0 4px 20px rgba(43,47,90,.06); transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s; }
   .prod-card-shop:hover { transform:translateY(-5px); box-shadow:0 20px 45px rgba(43,47,90,.14); }
   .prod-card-header { display:flex; align-items:center; gap:.8rem; padding:1.2rem 1.2rem .8rem; }
@@ -270,7 +272,7 @@
     <li><a href="#histoire">Notre histoire</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#offres">Offres</a></li>
-    <li><a href="#boutique">Boutique</a></li>
+    <li><a href="boutique.html">Boutique</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="fondateur.html" class="nav-founder-link">Portfolio du fondateur</a></li>
   </ul>
@@ -369,12 +371,12 @@
     <div class="services-grid">
 
       <div class="service-card reveal delay-1">
-        <!-- CORRECTION 7 : ajout de width et height pour éviter le CLS -->
         <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=500&q=80" alt="Média numérique" class="service-img" loading="lazy" width="500" height="160">
         <div class="service-body">
           <p class="service-name">Média numérique</p>
           <p class="service-sub">Production & diffusion</p>
           <p class="service-desc">Production audiovisuelle et numérique : infographies, podcasts, spots publicitaires et contenus pour vos réseaux.</p>
+          <a href="service-media-numerique.html" class="service-link">En savoir plus →</a>
         </div>
       </div>
 
@@ -384,6 +386,7 @@
           <p class="service-name">Communication institutionnelle</p>
           <p class="service-sub">Conseil en stratégie médias</p>
           <p class="service-desc">Définition et déploiement de votre stratégie de communication et présence numérique, pour ONG, institutions et entreprises.</p>
+          <a href="service-communication-institutionnelle.html" class="service-link">En savoir plus →</a>
         </div>
       </div>
 
@@ -393,6 +396,7 @@
           <p class="service-name">Communication événementielle</p>
           <p class="service-sub">Modération & animation</p>
           <p class="service-desc">Modération de panels, conférences, débats publics et cérémonies institutionnelles pour vos événements.</p>
+          <a href="service-communication-evenementielle.html" class="service-link">En savoir plus →</a>
         </div>
       </div>
 
@@ -402,6 +406,7 @@
           <p class="service-name">Formation</p>
           <p class="service-sub">Renforcement de capacités</p>
           <p class="service-desc">Formations en communication digitale, création de contenus professionnels et stratégie de communication pour vos équipes.</p>
+          <a href="service-formation.html" class="service-link">En savoir plus →</a>
         </div>
       </div>
 
@@ -463,17 +468,16 @@
   </div>
 </section>
 
-<!-- BOUTIQUE -->
+<!-- BOUTIQUE TEASER -->
 <section id="boutique">
   <div style="max-width:1200px;margin:0 auto;">
     <p class="section-label reveal">Modèles premium</p>
     <h2 class="section-title reveal delay-1">Boutique IMAGYNE</h2>
     <div class="divider reveal delay-2"></div>
     <p class="section-intro reveal delay-2">
-      Des modèles Word et Excel complets et prêts à personnaliser, conçus pour les organisations
-      qui veulent structurer leur communication sans repartir de zéro. Achat sécurisé via Chariow.
+      Des modèles Word et Excel complets et prêts à personnaliser. Un aperçu de nos best-sellers ci-dessous.
     </p>
-    <div class="boutique-grid">
+    <div class="boutique-teaser-grid">
 
       <div class="prod-card-shop reveal delay-1">
         <div class="prod-card-header">
@@ -489,17 +493,6 @@
       <div class="prod-card-shop reveal delay-2">
         <div class="prod-card-header">
           <div class="prod-icon docx">DOC</div>
-          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Plan de communication de crise</div></div>
-        </div>
-        <div class="prod-card-body">
-          <p class="prod-card-desc">Version complète avec scénarios types et messages pré-rédigés à adapter.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_m826w4f1" target="_blank" rel="noopener noreferrer" class="prod-buy-btn">Acheter →</a>
-        </div>
-      </div>
-
-      <div class="prod-card-shop reveal delay-3">
-        <div class="prod-card-header">
-          <div class="prod-icon docx">DOC</div>
           <div><span class="prod-badge">Premium</span><div class="prod-card-title">Communiqué de presse</div></div>
         </div>
         <div class="prod-card-body">
@@ -508,84 +501,7 @@
         </div>
       </div>
 
-      <div class="prod-card-shop reveal delay-1">
-        <div class="prod-card-header">
-          <div class="prod-icon docx">DOC</div>
-          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Charte éditoriale</div></div>
-        </div>
-        <div class="prod-card-body">
-          <p class="prod-card-desc">Version complète avec exemples de tons, de formats et de règles éditoriales.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_hiqcrdau" target="_blank" rel="noopener noreferrer" class="prod-buy-btn">Acheter →</a>
-        </div>
-      </div>
-
-      <div class="prod-card-shop reveal delay-2">
-        <div class="prod-card-header">
-          <div class="prod-icon docx">DOC</div>
-          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Rapport annuel</div></div>
-        </div>
-        <div class="prod-card-body">
-          <p class="prod-card-desc">Version complète avec mise en page prête à l'emploi et sections pré-remplies.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_odupoucx" target="_blank" rel="noopener noreferrer" class="prod-buy-btn">Acheter →</a>
-        </div>
-      </div>
-
       <div class="prod-card-shop reveal delay-3">
-        <div class="prod-card-header">
-          <div class="prod-icon docx">DOC</div>
-          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Rapport de campagne</div></div>
-        </div>
-        <div class="prod-card-body">
-          <p class="prod-card-desc">Version complète avec graphiques et indicateurs pré-configurés.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_29yz7dz3" target="_blank" rel="noopener noreferrer" class="prod-buy-btn">Acheter →</a>
-        </div>
-      </div>
-
-      <div class="prod-card-shop reveal delay-1">
-        <div class="prod-card-header">
-          <div class="prod-icon xlsx">XLS</div>
-          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Check-list de campagne</div></div>
-        </div>
-        <div class="prod-card-body">
-          <p class="prod-card-desc">Version complète avec étapes détaillées avant, pendant et après la campagne.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_f93onmto" target="_blank" rel="noopener noreferrer" class="prod-buy-btn">Acheter →</a>
-        </div>
-      </div>
-
-      <div class="prod-card-shop reveal delay-2">
-        <div class="prod-card-header">
-          <div class="prod-icon xlsx">XLS</div>
-          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Calendrier éditorial</div></div>
-        </div>
-        <div class="prod-card-body">
-          <p class="prod-card-desc">Version complète avec vue annuelle, mensuelle et suivi de publication automatisé.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_9v7025dg" target="_blank" rel="noopener noreferrer" class="prod-buy-btn">Acheter →</a>
-        </div>
-      </div>
-
-      <div class="prod-card-shop reveal delay-3">
-        <div class="prod-card-header">
-          <div class="prod-icon xlsx">XLS</div>
-          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Budget prévisionnel</div></div>
-        </div>
-        <div class="prod-card-body">
-          <p class="prod-card-desc">Version complète avec calculs automatiques et suivi des écarts budgétaires.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_58o49u9w" target="_blank" rel="noopener noreferrer" class="prod-buy-btn">Acheter →</a>
-        </div>
-      </div>
-
-      <div class="prod-card-shop reveal delay-1">
-        <div class="prod-card-header">
-          <div class="prod-icon xlsx">XLS</div>
-          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Plan média</div></div>
-        </div>
-        <div class="prod-card-body">
-          <p class="prod-card-desc">Version complète avec répartition automatique du budget par canal.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_h4eu7n9i" target="_blank" rel="noopener noreferrer" class="prod-buy-btn">Acheter →</a>
-        </div>
-      </div>
-
-      <div class="prod-card-shop reveal delay-2">
         <div class="prod-card-header">
           <div class="prod-icon xlsx">XLS</div>
           <div><span class="prod-badge">Premium</span><div class="prod-card-title">Tableau de KPI</div></div>
@@ -596,50 +512,9 @@
         </div>
       </div>
 
-      <div class="prod-card-shop reveal delay-3">
-        <div class="prod-card-header">
-          <div class="prod-icon xlsx">XLS</div>
-          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Suivi des réseaux sociaux</div></div>
-        </div>
-        <div class="prod-card-body">
-          <p class="prod-card-desc">Version complète avec tableaux de bord par plateforme et calcul d'engagement.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_z423kqvb" target="_blank" rel="noopener noreferrer" class="prod-buy-btn">Acheter →</a>
-        </div>
-      </div>
-
-      <div class="prod-card-shop reveal delay-1">
-        <div class="prod-card-header">
-          <div class="prod-icon xlsx">XLS</div>
-          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Suivi des partenariats</div></div>
-        </div>
-        <div class="prod-card-body">
-          <p class="prod-card-desc">Version complète avec historique de contacts et rappels automatiques.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_15d323w8" target="_blank" rel="noopener noreferrer" class="prod-buy-btn">Acheter →</a>
-        </div>
-      </div>
-
-      <div class="prod-card-shop reveal delay-2">
-        <div class="prod-card-header">
-          <div class="prod-icon xlsx">XLS</div>
-          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Veille médiatique</div></div>
-        </div>
-        <div class="prod-card-body">
-          <p class="prod-card-desc">Version complète avec grille de scoring et synthèse hebdomadaire automatisée.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_jeg4cxtw" target="_blank" rel="noopener noreferrer" class="prod-buy-btn">Acheter →</a>
-        </div>
-      </div>
-
-      <div class="prod-card-shop reveal delay-3">
-        <div class="prod-card-header">
-          <div class="prod-icon xlsx">XLS</div>
-          <div><span class="prod-badge">Premium</span><div class="prod-card-title">Base de contacts journalistes</div></div>
-        </div>
-        <div class="prod-card-body">
-          <p class="prod-card-desc">Version complète avec structure enrichie et filtres prêts à l'emploi.</p>
-          <a href="https://vuzjqdkh.mychariow.market/prd_eawa8wxz" target="_blank" rel="noopener noreferrer" class="prod-buy-btn">Acheter →</a>
-        </div>
-      </div>
-
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="boutique.html" class="btn btn-primary reveal delay-3">Voir les 15 modèles →</a>
     </div>
   </div>
 </section>
@@ -689,7 +564,6 @@
         </div>
       </div>
 
-      <!-- CORRECTION 6 : ajout de method="post" et aria-label -->
       <form class="contact-form reveal delay-3" id="contactForm"
             method="post"
             aria-label="Formulaire de contact IMAGYNE"
@@ -713,6 +587,7 @@
             <option>Communication institutionnelle</option>
             <option>Communication événementielle</option>
             <option>Formation</option>
+            <option>Modèle personnalisé</option>
             <option>Autre / Je ne sais pas encore</option>
           </select>
         </div>
@@ -744,17 +619,14 @@
 </footer>
 
 <script>
-  // CORRECTION 4 : toggleMenu défini en premier, avant tout usage
   function toggleMenu() {
     const nav = document.getElementById('navLinks');
     const btn = document.getElementById('hamburger');
     const isOpen = nav.classList.toggle('open');
     btn.classList.toggle('open');
-    // Mise à jour de l'attribut aria-expanded pour l'accessibilité
     btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   }
 
-  // Fermeture du menu au clic sur un lien
   document.querySelectorAll('.nav-links a').forEach(a => {
     a.addEventListener('click', () => {
       document.getElementById('navLinks').classList.remove('open');
@@ -763,19 +635,17 @@
       btn.setAttribute('aria-expanded', 'false');
     });
   });
+  document.getElementById('hamburger').addEventListener('click', toggleMenu);
 
-  // Reveal on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold:.15 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Nav scroll shadow
   window.addEventListener('scroll', () => {
     document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20);
   });
 
-  // DIAPORAMA
   function initDiapo(id, interval) {
     const el = document.getElementById(id);
     if (!el) return;
@@ -796,7 +666,6 @@
   }
   initDiapo('diapoImagyne', 4500);
 
-  // Contact form -> Web3Forms
   function submitContactForm(e) {
     e.preventDefault();
     const btn = e.target.querySelector('.form-submit');
@@ -813,8 +682,6 @@
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        // ⚠️ CORRECTION 1 : Remplace cette valeur par ta vraie clé Web3Forms
-        // Crée un compte sur https://web3forms.com pour obtenir ta clé
         access_key: 'db8ca462-a7b4-4bb8-ade1-ef28ab85014a',
         subject: `Demande de devis : ${service}`,
         from_name: name,

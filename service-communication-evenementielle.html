@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Communication événementielle — IMAGYNE</title>
+<meta name="description" content="Nous accompagnons vos événements de A à Z : conception, modération de panels, animation de conférences et couverture médiatique pour donner à vos rencontres l'écho qu'elles méritent.">
+<meta property="og:title" content="Communication événementielle — IMAGYNE">
+<meta property="og:description" content="Nous accompagnons vos événements de A à Z : conception, modération de panels, animation de conférences et couverture médiatique pour donner à vos rencontres l'écho qu'elles méritent.">
+<meta property="og:image" content="https://imagyne241.com/photo-yoni.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Raleway:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QM3TPMKJR7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QM3TPMKJR7');
+</script>
+
+<style>
+  :root {
+    --navy: #2b2f5a;
+    --navy-light: #3d4272;
+    --magenta: #a855a0;
+    --violet: #6b6fa8;
+    --lavender: #9fa3c4;
+    --lilac: #c5c8e0;
+    --off-white: #f7f7fb;
+    --white: #ffffff;
+    --text: #1a1d3b;
+    --muted: #7578a0;
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Raleway',sans-serif; background:var(--white); color:var(--text); line-height:1.7; overflow-x:hidden; }
+  h1,h2,h3 { font-family:'Montserrat',sans-serif; }
+  section { padding:5.5rem 5%; }
+  a { color:inherit; }
+  img { max-width:100%; display:block; }
+
+  .reveal { opacity:0; transform:translateY(24px); transition:opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+  .delay-1.visible { transition-delay:.08s; }
+  .delay-2.visible { transition-delay:.16s; }
+  .delay-3.visible { transition-delay:.24s; }
+
+  nav#mainNav {
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(255,255,255,.95); backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--lilac);
+    padding:0 5%; display:flex; align-items:center; justify-content:space-between;
+    height:64px; transition:box-shadow .3s;
+  }
+  nav#mainNav.scrolled { box-shadow:0 4px 24px rgba(43,47,90,.08); }
+  .nav-logo { font-family:'Montserrat',sans-serif; font-weight:900; font-size:1.3rem; color:var(--navy); text-decoration:none; white-space:nowrap; }
+  .nav-logo span { color:var(--magenta); }
+  .nav-links { display:flex; gap:1.2rem; list-style:none; flex-wrap:nowrap; align-items:center; }
+  .nav-links a { text-decoration:none; font-size:.75rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--violet); position:relative; padding-bottom:4px; transition:color .3s; white-space:nowrap; }
+  .nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--magenta); transition:width .35s cubic-bezier(.22,1,.36,1); }
+  .nav-links a:hover { color:var(--navy); }
+  .nav-links a:hover::after { width:100%; }
+  .nav-founder-link {
+    background:var(--navy); color:#fff !important; padding:.5rem 1.1rem !important;
+    border-radius:999px; font-weight:700 !important;
+  }
+  .nav-founder-link:hover { background:var(--magenta); }
+  .nav-founder-link::after { display:none; }
+
+  .nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; }
+  .nav-hamburger span { display:block; width:24px; height:2px; background:var(--navy); border-radius:2px; transition:all .3s; }
+  .nav-hamburger.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+  .nav-hamburger.open span:nth-child(2) { opacity:0; }
+  .nav-hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+
+  .btn { display:inline-block; padding:.85rem 2.1rem; border-radius:var(--radius-sm); font-family:'Montserrat',sans-serif; font-weight:700; font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; border:none; cursor:pointer; transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s,background .2s; }
+  .btn-primary { background:var(--magenta); color:var(--white); box-shadow:0 6px 24px rgba(168,85,160,.35); }
+  .btn-primary:hover { background:#8b4090; box-shadow:0 12px 32px rgba(168,85,160,.45); transform:translateY(-2px); }
+  .btn-outline { background:transparent; color:var(--white); border:2px solid rgba(255,255,255,.35); }
+  .btn-outline:hover { border-color:var(--white); background:rgba(255,255,255,.08); }
+  .btn-outline-dark { background:transparent; color:var(--navy); border:2px solid var(--violet); }
+  .btn-outline-dark:hover { border-color:var(--magenta); color:var(--magenta); background:rgba(168,85,160,.06); }
+
+  /* PAGE HERO LITE */
+  .page-hero {
+    min-height:46vh; display:flex; align-items:center; padding-top:64px;
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 55%,var(--violet) 100%);
+    position:relative; overflow:hidden;
+  }
+  .page-hero::before {
+    content:''; position:absolute; inset:0; opacity:.5;
+    background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='30,5 55,50 5,50' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='1.5'/%3E%3C/svg%3E");
+  }
+  .page-hero-inner { max-width:900px; margin:0 auto; position:relative; z-index:2; text-align:center; padding:2rem 5%; }
+  .page-breadcrumb { font-family:'Montserrat',sans-serif; font-size:.72rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--lavender); margin-bottom:1rem; }
+  .page-breadcrumb a { text-decoration:none; color:var(--lavender); }
+  .page-breadcrumb a:hover { color:#fff; }
+  .page-hero h1 { font-weight:900; font-size:clamp(1.8rem,4.5vw,2.8rem); color:#fff; line-height:1.2; letter-spacing:-.02em; margin-bottom:1rem; }
+  .page-hero-sub { font-size:1.05rem; color:var(--lavender); max-width:600px; margin:0 auto; line-height:1.7; }
+
+  .section-label { font-family:'Montserrat',sans-serif; font-weight:700; font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; color:var(--magenta); margin-bottom:.7rem; text-align:center; }
+  .section-title { font-weight:900; font-size:clamp(1.5rem,3.2vw,2.2rem); color:var(--navy); letter-spacing:-.01em; text-align:center; margin-bottom:1rem; }
+  .divider { width:56px; height:3px; background:var(--magenta); border-radius:3px; margin:0 auto 1.6rem; }
+  .section-intro { text-align:center; max-width:640px; margin:0 auto 3rem; color:var(--muted); font-size:1.02rem; line-height:1.75; }
+
+  .founder-banner { background:var(--off-white); border-top:1px solid var(--lilac); padding:3.5rem 5%; text-align:center; }
+  .founder-banner-inner { max-width:640px; margin:0 auto; }
+  .founder-banner p { color:var(--muted); font-size:.95rem; margin-bottom:1.2rem; line-height:1.7; }
+  .founder-banner strong { color:var(--navy); }
+
+  footer { background:var(--navy); color:var(--lavender); text-align:center; padding:2.2rem 5%; font-size:.82rem; }
+  footer strong { color:#fff; font-family:'Montserrat',sans-serif; }
+  footer em { color:var(--magenta); font-style:italic; }
+
+  @media (max-width:768px) {
+    .nav-hamburger { display:flex; }
+    .nav-links {
+      display:none; position:fixed; top:64px; left:0; right:0;
+      background:rgba(255,255,255,.98); backdrop-filter:blur(14px);
+      flex-direction:column; gap:0; padding:0;
+      border-bottom:2px solid var(--lilac);
+      box-shadow:0 8px 30px rgba(43,47,90,.12);
+    }
+    .nav-links.open { display:flex; }
+    .nav-links li { border-bottom:1px solid var(--lilac); width:100%; }
+    .nav-links a { display:block; padding:1rem 2rem; font-size:.9rem; }
+    .nav-links a::after { display:none; }
+    .nav-founder-link { margin:1rem 2rem; text-align:center; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">IMAG<span>Y</span>NE</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#histoire">Notre histoire</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#offres">Offres</a></li>
+    <li><a href="boutique.html">Boutique</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="fondateur.html" class="nav-founder-link">Portfolio du fondateur</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-breadcrumb"><a href="index.html">IMAGYNE</a> / <a href="index.html#services">Services</a> / Communication événementielle</p>
+    <h1 class="reveal">Communication événementielle</h1>
+    <p class="page-hero-sub reveal delay-1">Modération et animation</p>
+  </div>
+</section>
+
+<!-- DETAIL -->
+<section class="service-detail">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-intro reveal" style="margin-bottom:3rem;">Nous accompagnons vos événements de A à Z : conception, modération de panels, animation de conférences et couverture médiatique pour donner à vos rencontres l'écho qu'elles méritent.</p>
+    <div class="service-includes">
+      <div class="include-card reveal">
+        <div class="include-card-title">Modération de panels</div>
+        <p class="include-card-desc">Animation professionnelle de conférences, tables rondes et débats publics.</p>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-card-title">Couverture d'événements</div>
+        <p class="include-card-desc">Captation photo et vidéo de vos cérémonies et rencontres institutionnelles.</p>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-card-title">Identité visuelle événementielle</div>
+        <p class="include-card-desc">Bannières, supports et visuels dédiés à votre événement.</p>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-card-title">Communication pré et post-événement</div>
+        <p class="include-card-desc">Promotion en amont et valorisation des résultats après coup.</p>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <a href="index.html#contact" class="btn btn-primary reveal">Demander un devis pour ce service</a>
+    </div>
+  </div>
+</section>
+
+<!-- REALISATIONS -->
+<section id="realisations">
+  <div style="max-width:1200px;margin:0 auto;">
+    <p class="section-label reveal">Nos réalisations</p>
+    <h2 class="section-title reveal delay-1">Projets communication événementielle</h2>
+    <div class="divider reveal delay-2"></div>
+    <div class="realisations-grid">
+      <div class="realisation-empty reveal delay-2">
+        <strong>Nos premiers projets arrivent bientôt.</strong>
+        <p>Cette section accueillera progressivement les campagnes et productions réalisées pour nos clients dans ce domaine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER BANNER -->
+<div class="founder-banner">
+  <div class="founder-banner-inner">
+    <p>
+      Ce site héberge également le <strong>portfolio personnel de Junior Yoni Tsango</strong>,
+      fondateur d'IMAGYNE, communicateur, graphiste et acteur civique engagé sur les questions de jeunesse.
+    </p>
+    <a href="fondateur.html" class="btn btn-outline-dark">Découvrir son portfolio →</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 <strong>IMAGYNE</strong>, <em>colorons votre quotidien</em></p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    const btn = document.getElementById('hamburger');
+    const isOpen = nav.classList.toggle('open');
+    btn.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+      const btn = document.getElementById('hamburger');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.getElementById('hamburger').addEventListener('click', toggleMenu);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold:.15 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20);
+  });
+</script>
+
+</body>
+</html>

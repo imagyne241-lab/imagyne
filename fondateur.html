@@ -76,17 +76,29 @@
   .btn-outline:hover { background:var(--ink); color:#fff; }
 
   /* ── HERO SLIDER ── */
-  .hero-slider { position:relative; height:84vh; min-height:520px; max-height:780px; overflow:hidden; display:flex; align-items:flex-end; }
+  .hero-slider { position:relative; height:84vh; min-height:520px; max-height:780px; overflow:hidden; }
   .hero-slide { position:absolute; inset:0; opacity:0; transition:opacity 1.2s ease-in-out; }
   .hero-slide.active { opacity:1; }
   .hero-slide img { width:100%; height:100%; object-fit:cover; object-position:center 30%; }
-  .hero-scrim { position:absolute; inset:0; background:linear-gradient(180deg, rgba(26,26,26,.25) 0%, rgba(26,26,26,.55) 50%, rgba(26,26,26,.93) 100%); }
-  .hero-inner { max-width:1200px; margin:0 auto; position:relative; z-index:2; width:100%; padding:0 5% 3.5rem; }
-  .hero-eyebrow { font-weight:600; font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ochre); margin-bottom:.4rem; }
-  .hero-news-title { font-family:'Fraunces',serif; font-weight:900; font-size:clamp(1.3rem,2.8vw,2rem); color:#fff; line-height:1.25; margin-bottom:.5rem; }
-  .hero h1 { font-weight:400; font-style:italic; font-size:clamp(.9rem,1.6vw,1.1rem); color:rgba(255,255,255,.8); line-height:1.5; margin-bottom:1.4rem; max-width:680px; border-left:2px solid var(--ochre); padding-left:.9rem; }
-  .hero-cta { display:flex; gap:1rem; flex-wrap:wrap; }
-  .hero-dots { position:absolute; bottom:24px; right:5%; display:flex; gap:.55rem; z-index:3; }
+  /* scrim léger : juste assez pour les bords, pas pour masquer les visages */
+  .hero-scrim {
+    position:absolute; inset:0;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 60%, rgba(0,0,0,.72) 100%);
+  }
+  /* bande de titre en bas — design journal */
+  .hero-caption {
+    position:absolute; bottom:0; left:0; right:0; z-index:3;
+    padding:1.2rem 5% 1.6rem;
+  }
+  .hero-eyebrow { font-weight:700; font-size:.68rem; letter-spacing:.13em; text-transform:uppercase; color:var(--ochre); margin-bottom:.35rem; display:block; }
+  .hero-news-title { font-family:'Fraunces',serif; font-weight:900; font-size:clamp(1.1rem,2.4vw,1.65rem); color:#fff; line-height:1.25; text-shadow:0 2px 12px rgba(0,0,0,.6); }
+  /* CTA flottants en haut à gauche, loin des visages */
+  .hero-cta-top {
+    position:absolute; top:88px; left:5%; z-index:3;
+    display:flex; gap:.8rem; flex-wrap:wrap;
+  }
+  .hero-dots { position:absolute; bottom:1.6rem; right:5%; display:flex; gap:.55rem; z-index:4; }
   .hero-dot { width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,.35); border:none; cursor:pointer; transition:background .25s,transform .25s; padding:0; }
   .hero-dot.active { background:var(--ochre); transform:scale(1.35); }
 
@@ -121,7 +133,8 @@
   .pages-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; max-width:900px; margin:0 auto; }
   .page-card { background:var(--cream); border-radius:var(--radius); padding:1.8rem 1.4rem; text-decoration:none; display:flex; flex-direction:column; align-items:center; text-align:center; gap:.6rem; box-shadow:0 4px 20px rgba(35,35,35,.06); transition:transform .35s,box-shadow .35s; border:2px solid transparent; }
   .page-card:hover { transform:translateY(-5px); box-shadow:0 20px 45px rgba(35,35,35,.14); border-color:var(--rust); }
-  .page-card-icon { font-size:2rem; }
+  .page-card-icon { width:48px; height:48px; border-radius:12px; background:var(--rust); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .page-card-icon svg { width:24px; height:24px; stroke:#fff; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
   .page-card-label { font-family:'Fraunces',serif; font-weight:700; font-size:1rem; color:var(--ink); }
   .page-card-desc { font-size:.8rem; color:var(--muted); line-height:1.5; }
   .page-card-cta { font-size:.78rem; font-weight:600; color:var(--rust); }
@@ -245,73 +258,59 @@
 <!-- ══ HERO SLIDER ══ -->
 <section class="hero-slider" id="home">
 
+  <!-- CTA fixe en haut à gauche, identique pour tous les slides -->
+  <div class="hero-cta-top">
+    <a href="actualites.html" class="btn btn-primary">Voir les actualités</a>
+    <a href="#contact" class="btn btn-outline-light">Me contacter</a>
+  </div>
+
+  <!-- Slide 1 : enfants Ntoum -->
   <div class="hero-slide active">
-    <img src="portfolio-carousel-1.jpg" alt="Festisol">
+    <img src="portfolio-carousel-1.jpg" alt="Animation Festisol Ntoum">
     <div class="hero-scrim"></div>
-    <div class="hero-inner">
-      <p class="hero-eyebrow">Actualité · Événementiel & Solidarité</p>
-      <div class="hero-news-title">Festival des Solidarités (Festisol) 2024</div>
-      <h1>Animation d'ateliers interactifs et sensibilisation des jeunes bénéficiaires au Gabon.</h1>
-      <div class="hero-cta">
-        <a href="actualites.html" class="btn btn-primary">Découvrir l'actualité</a>
-        <a href="#contact" class="btn btn-outline-light">Me contacter</a>
-      </div>
+    <div class="hero-caption">
+      <span class="hero-eyebrow">Solidarité · Festisol</span>
+      <div class="hero-news-title">Animation Festisol avec les enfants de Ntoum</div>
     </div>
   </div>
 
+  <!-- Slide 2 : tenue d'observateur -->
   <div class="hero-slide">
-    <img src="portfolio-carousel-2.jpg" alt="Observation Électorale" style="object-position:center 20%;">
+    <img src="portfolio-carousel-2.jpg" alt="Observation électorale ROC" style="object-position:center 20%;">
     <div class="hero-scrim"></div>
-    <div class="hero-inner">
-      <p class="hero-eyebrow">Actualité · Démocratie & Citoyenneté</p>
-      <div class="hero-news-title">Mission d'Observation Électorale avec le ROC</div>
-      <h1>Accréditation et déploiement de terrain auprès du Réseau des Observateurs Citoyens.</h1>
-      <div class="hero-cta">
-        <a href="actualites.html" class="btn btn-primary">En savoir plus</a>
-        <a href="#contact" class="btn btn-outline-light">Me contacter</a>
-      </div>
+    <div class="hero-caption">
+      <span class="hero-eyebrow">Démocratie · ROC</span>
+      <div class="hero-news-title">Observation électorale avec le ROC à Libreville</div>
     </div>
   </div>
 
+  <!-- Slide 3 : affiche table ronde -->
   <div class="hero-slide">
     <img src="portfolio-carousel-3.jpg" alt="Restitution Festisol">
     <div class="hero-scrim"></div>
-    <div class="hero-inner">
-      <p class="hero-eyebrow">Actualité · Formation & Restitution</p>
-      <div class="hero-news-title">Atelier de Capitalisation et Restitution Communautaire</div>
-      <h1>Renforcement des capacités des organisations de la société civile sur le terrain.</h1>
-      <div class="hero-cta">
-        <a href="actualites.html" class="btn btn-primary">Lire le compte-rendu</a>
-        <a href="#contact" class="btn btn-outline-light">Me contacter</a>
-      </div>
+    <div class="hero-caption">
+      <span class="hero-eyebrow">Formation · Société civile</span>
+      <div class="hero-news-title">Table ronde</div>
     </div>
   </div>
 
+  <!-- Slide 4 : kakemono Festisol -->
   <div class="hero-slide">
-    <img src="portfolio-carousel-4.jpg" alt="Actions Jeunesse">
+    <img src="portfolio-carousel-4.jpg" alt="Rencontre multi-acteurs Festisol">
     <div class="hero-scrim"></div>
-    <div class="hero-inner">
-      <p class="hero-eyebrow">Actualité · Plaidoyer Jeunesse</p>
-      <div class="hero-news-title">Plaidoyer pour l'Autonomisation des Jeunes Ruraux</div>
-      <h1>Porte-voix des initiatives à fort impact social et communautaire.</h1>
-      <div class="hero-cta">
-        <a href="actualites.html" class="btn btn-primary">Voir les projets</a>
-        <a href="#contact" class="btn btn-outline-light">Me contacter</a>
-      </div>
+    <div class="hero-caption">
+      <span class="hero-eyebrow">Solidarité · Festisol</span>
+      <div class="hero-news-title">Rencontre multi-acteurs du Festisol à Libreville</div>
     </div>
   </div>
 
+  <!-- Slide 5 : micro podcast -->
   <div class="hero-slide">
-    <img src="imagyne-carousel-2.webp" alt="Lutte Désinformation">
+    <img src="imagyne-carousel-2.webp" alt="Podcast droits des femmes">
     <div class="hero-scrim"></div>
-    <div class="hero-inner">
-      <p class="hero-eyebrow">Actualité · Éducation aux Médias</p>
-      <div class="hero-news-title">Campagne de Lutte Contre les Infox et la Désinformation</div>
-      <h1>Sessions d'information et ateliers pratiques pour outiller la jeunesse face aux médias.</h1>
-      <div class="hero-cta">
-        <a href="actualites.html" class="btn btn-primary">Consulter la campagne</a>
-        <a href="#contact" class="btn btn-outline-light">Me contacter</a>
-      </div>
+    <div class="hero-caption">
+      <span class="hero-eyebrow">Droits · Podcast</span>
+      <div class="hero-news-title">Podcast sur les droits des femmes</div>
     </div>
   </div>
 
@@ -393,19 +392,25 @@
     <div class="divider"></div>
     <div class="pages-grid">
       <a href="actualites.html" class="page-card">
-        <span class="page-card-icon">📰</span>
+        <span class="page-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16v3H4zM4 10h10v2H4zM4 15h8v2H4z"/><rect x="14" y="10" width="6" height="7" rx="1"/></svg>
+        </span>
         <span class="page-card-label">Actualités</span>
         <span class="page-card-desc">Actions d'organisations et de particuliers que je couvre et relaye.</span>
         <span class="page-card-cta">Voir les actualités →</span>
       </a>
       <a href="infographie.html" class="page-card">
-        <span class="page-card-icon">🖼</span>
+        <span class="page-card-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M3 17l4-4 3 3 4-5 4 4"/><circle cx="8" cy="8" r="1.5"/></svg>
+        </span>
         <span class="page-card-label">Infographies</span>
         <span class="page-card-desc">Toutes mes productions graphiques et visuelles.</span>
         <span class="page-card-cta">Voir les infographies →</span>
       </a>
       <a href="video.html" class="page-card">
-        <span class="page-card-icon">🎬</span>
+        <span class="page-card-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 9l5-3v12l-5-3V9z"/></svg>
+        </span>
         <span class="page-card-label">Vidéos</span>
         <span class="page-card-desc">Spots, reportages, podcasts et productions audiovisuelles.</span>
         <span class="page-card-cta">Voir les vidéos →</span>
@@ -580,20 +585,31 @@
         </div>
       </div>
 
-      <form class="cf-form" onsubmit="return submitForm(event)">
+      <!--
+        FormSubmit.co : pas de compte ni de clé requise.
+        La 1re soumission envoie un email de confirmation à jyoni48@gmail.com — clique le lien pour activer.
+        Après ça, tous les messages arriveront directement dans ta boîte.
+      -->
+      <form class="cf-form" action="https://formsubmit.co/jyoni48@gmail.com" method="POST">
+        <!-- Options FormSubmit -->
+        <input type="hidden" name="_subject" value="Message depuis votre site personnel">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://imagyne241.com/fondateur.html?merci=1">
+        <input type="hidden" name="_template" value="table">
+
         <div class="cf-group">
           <label for="ff-name">Nom</label>
-          <input type="text" id="ff-name" required placeholder="Votre nom">
+          <input type="text" id="ff-name" name="name" required placeholder="Votre nom">
         </div>
         <div class="cf-group">
           <label for="ff-email">Email</label>
-          <input type="email" id="ff-email" required placeholder="vous@exemple.com">
+          <input type="email" id="ff-email" name="email" required placeholder="vous@exemple.com">
         </div>
         <div class="cf-group">
           <label for="ff-message">Message</label>
-          <textarea id="ff-message" required placeholder="Votre message..."></textarea>
+          <textarea id="ff-message" name="message" required placeholder="Votre message..."></textarea>
         </div>
-        <button type="submit" class="cf-submit" id="ff-btn">Envoyer</button>
+        <button type="submit" class="cf-submit">Envoyer</button>
         <p id="ff-status"></p>
       </form>
     </div>
@@ -635,42 +651,12 @@
   }
   setInterval(() => setHeroSlide((currentHeroSlide + 1) % heroSlides.length), 5000);
 
-  /* ── FORMULAIRE ── */
-  function submitForm(e) {
-    e.preventDefault();
-    const btn = document.getElementById('ff-btn');
-    const status = document.getElementById('ff-status');
-    btn.disabled = true;
-    btn.textContent = 'Envoi en cours...';
-
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        access_key: 'FOUNDER_ACCESS_KEY',
-        subject: 'Contact depuis le site personnel',
-        from_name: document.getElementById('ff-name').value,
-        email: document.getElementById('ff-email').value,
-        message: document.getElementById('ff-message').value
-      })
-    })
-    .then(r => r.json())
-    .then(data => {
-      if (data.success) {
-        btn.textContent = 'Message envoyé ✓';
-        e.target.reset();
-        status.textContent = 'Merci, votre message a bien été envoyé.';
-        status.style.display = 'block';
-      } else {
-        btn.textContent = 'Erreur, réessayez';
-        btn.disabled = false;
-      }
-    })
-    .catch(() => {
-      btn.textContent = 'Erreur, réessayez';
-      btn.disabled = false;
-    });
-    return false;
+  /* ── MESSAGE DE CONFIRMATION (après redirection FormSubmit) ── */
+  if (new URLSearchParams(window.location.search).get('merci') === '1') {
+    const s = document.getElementById('ff-status');
+    if (s) { s.textContent = 'Merci, votre message a bien été envoyé !'; s.style.display = 'block'; }
+    // scroll vers le formulaire
+    setTimeout(() => document.getElementById('contact')?.scrollIntoView({behavior:'smooth'}), 300);
   }
 </script>
 </body>

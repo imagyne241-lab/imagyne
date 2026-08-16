@@ -157,7 +157,12 @@
   .grid-4 { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; max-width:1200px; margin:0 auto; }
   .card { background:var(--white); border-radius:var(--radius); overflow:hidden; text-decoration:none; color:inherit; box-shadow:0 4px 20px rgba(0,0,0,.05); transition:transform .3s,box-shadow .3s; display:block; }
   .card:hover { transform:translateY(-5px); box-shadow:0 20px 45px rgba(35,35,35,.12); }
-  .card-img { aspect-ratio:16/9; width:100%; object-fit:cover; }
+  .card-thumb { position:relative; aspect-ratio:16/9; overflow:hidden; background:#000; }
+  .card-thumb img { width:100%; height:100%; object-fit:cover; transition:opacity .3s; }
+  .card:hover .card-thumb img { opacity:.85; }
+  .card-play { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:50px; opacity:.9; pointer-events:none; transition:opacity .25s; }
+  .card:hover .card-play { opacity:1; }
+  .card-badge { position:absolute; top:10px; right:10px; background:rgba(0,0,0,.65); color:#fff; font-size:.68rem; font-weight:600; padding:.25rem .7rem; border-radius:999px; }
   .card-body { padding:1.1rem; }
   .card-title { font-weight:700; font-size:.92rem; margin-bottom:.35rem; color:var(--ink); }
   .card-sub { font-size:.78rem; color:var(--muted); }
@@ -284,7 +289,17 @@
     </div>
   </div>
 
-  <!-- Slide 3 : affiche table ronde -->
+  <!-- Slide 3 : micro podcast -->
+  <div class="hero-slide">
+    <img src="imagyne-carousel-2.webp" alt="Podcast droits des femmes">
+    <div class="hero-scrim"></div>
+    <div class="hero-caption">
+      <span class="hero-eyebrow">Droits · Podcast</span>
+      <div class="hero-news-title">Podcast sur les droits des femmes</div>
+    </div>
+  </div>
+
+  <!-- Slide 4 : affiche table ronde -->
   <div class="hero-slide">
     <img src="portfolio-carousel-3.jpg" alt="Restitution Festisol">
     <div class="hero-scrim"></div>
@@ -294,23 +309,13 @@
     </div>
   </div>
 
-  <!-- Slide 4 : kakemono Festisol -->
+  <!-- Slide 5 : kakemono Festisol -->
   <div class="hero-slide">
     <img src="portfolio-carousel-4.jpg" alt="Rencontre multi-acteurs Festisol">
     <div class="hero-scrim"></div>
     <div class="hero-caption">
       <span class="hero-eyebrow">Solidarité · Festisol</span>
       <div class="hero-news-title">Rencontre multi-acteurs du Festisol à Libreville</div>
-    </div>
-  </div>
-
-  <!-- Slide 5 : micro podcast -->
-  <div class="hero-slide">
-    <img src="imagyne-carousel-2.webp" alt="Podcast droits des femmes">
-    <div class="hero-scrim"></div>
-    <div class="hero-caption">
-      <span class="hero-eyebrow">Droits · Podcast</span>
-      <div class="hero-news-title">Podcast sur les droits des femmes</div>
     </div>
   </div>
 
@@ -479,20 +484,36 @@
   <h2 class="section-title">Quelques vidéos récentes</h2>
   <div class="divider"></div>
   <div class="grid-4">
-    <a href="https://youtu.be/j0n5Vu3vp88" target="_blank" class="card">
-      <img src="https://img.youtube.com/vi/j0n5Vu3vp88/hqdefault.jpg" class="card-img" alt="Journée Électorale">
+    <a href="https://youtu.be/j0n5Vu3vp88" target="_blank" rel="noopener" class="card">
+      <div class="card-thumb">
+        <img src="https://img.youtube.com/vi/j0n5Vu3vp88/hqdefault.jpg" alt="Journée Électorale" loading="lazy">
+        <svg class="card-play" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg>
+        <span class="card-badge">YouTube</span>
+      </div>
       <div class="card-body"><div class="card-title">Reportage Journée Électorale</div><div class="card-sub">Couverture terrain pour TLP Gabon</div></div>
     </a>
-    <a href="https://youtu.be/ztb75yA7FGI" target="_blank" class="card">
-      <img src="https://img.youtube.com/vi/ztb75yA7FGI/hqdefault.jpg" class="card-img" alt="Violences Physiques">
+    <a href="https://youtu.be/ztb75yA7FGI" target="_blank" rel="noopener" class="card">
+      <div class="card-thumb">
+        <img src="https://img.youtube.com/vi/ztb75yA7FGI/hqdefault.jpg" alt="Violences Physiques" loading="lazy">
+        <svg class="card-play" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg>
+        <span class="card-badge">YouTube</span>
+      </div>
       <div class="card-body"><div class="card-title">Spot Violences Physiques</div><div class="card-sub">Campagne de sensibilisation</div></div>
     </a>
-    <a href="https://youtu.be/tZwUXzdenV8" target="_blank" class="card">
-      <img src="https://img.youtube.com/vi/tZwUXzdenV8/hqdefault.jpg" class="card-img" alt="Citoyennes Engagées">
+    <a href="https://youtu.be/tZwUXzdenV8" target="_blank" rel="noopener" class="card">
+      <div class="card-thumb">
+        <img src="https://img.youtube.com/vi/tZwUXzdenV8/hqdefault.jpg" alt="Citoyennes Engagées" loading="lazy">
+        <svg class="card-play" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg>
+        <span class="card-badge">YouTube</span>
+      </div>
       <div class="card-body"><div class="card-title">Projet Citoyennes Engagées</div><div class="card-sub">Vidéo de présentation officielle</div></div>
     </a>
-    <a href="https://youtu.be/KNYM9JTx9R0" target="_blank" class="card">
-      <img src="https://img.youtube.com/vi/KNYM9JTx9R0/hqdefault.jpg" class="card-img" alt="Droits des Femmes">
+    <a href="https://youtu.be/KNYM9JTx9R0" target="_blank" rel="noopener" class="card">
+      <div class="card-thumb">
+        <img src="https://img.youtube.com/vi/KNYM9JTx9R0/hqdefault.jpg" alt="Droits des Femmes" loading="lazy">
+        <svg class="card-play" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg>
+        <span class="card-badge">YouTube</span>
+      </div>
       <div class="card-body"><div class="card-title">Podcast Droits des Femmes</div><div class="card-sub">Journée internationale · 8 mars</div></div>
     </a>
   </div>

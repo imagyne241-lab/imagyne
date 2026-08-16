@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actualités - Junior Yoni Tsango</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --rust: #0b6e4f; --sand: #ece4d3; --cream: #f7f3ea; --ink: #1a1a1a; --muted: #6b6459; --radius: 14px; }
+  body { font-family:'Space Grotesk',sans-serif; background:var(--cream); color:var(--ink); margin:0; line-height:1.6; }
+  header { background:var(--ink); color:#fff; padding:2rem 5%; text-align:center; }
+  header a { color:var(--rust); text-decoration:none; font-weight:600; float:left; }
+  h1 { font-family:'Fraunces',serif; font-size:2rem; margin-top:1rem; }
+  .container { max-width:1100px; margin:3rem auto; padding:0 5%; }
+  .news-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem; }
+  .news-card { background:#fff; border-radius:var(--radius); overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,.05); }
+  .news-img { width:100%; height:200px; object-fit:cover; }
+  .news-content { padding:1.5rem; }
+  .news-tag { font-size:.75rem; color:var(--rust); font-weight:700; text-transform:uppercase; }
+  .news-title { font-family:'Fraunces',serif; font-size:1.2rem; margin:.5rem 0; }
+  .news-date { font-size:.8rem; color:var(--muted); margin-bottom:.8rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="fondateur.html">← Retour à l'accueil</a>
+  <h1 style="clear:both;">Toutes les Actualités</h1>
+  <p>Suivi des engagements, ateliers, et missions sur le terrain</p>
+</header>
+
+<div class="container">
+  <div class="news-grid">
+
+    <div class="news-card">
+      <img src="portfolio-carousel-1.jpg" class="news-img" alt="Festisol">
+      <div class="news-content">
+        <span class="news-tag">Solidarité</span>
+        <h2 class="news-title">Festival des Solidarités (Festisol) 2025</h2>
+        <div class="news-date">Novembre 2025</div>
+        <p>Animation de sessions d'échanges et d'ateliers avec les bénéficiaires sur l'engagement communautaire.</p>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <img src="portfolio-carousel-2.jpg" class="news-img" alt="Observation électorale">
+      <div class="news-content">
+        <span class="news-tag">Civisme</span>
+        <h2 class="news-title">Mission d'Observation Électorale</h2>
+        <div class="news-date">Septembre 2025</div>
+        <p>Déploiement sur le terrain en qualité d'observateur agréé pour le suivi citoyen du processus électoral.</p>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <img src="portfolio-carousel-3.jpg" class="news-img" alt="Restitution">
+      <div class="news-content">
+        <span class="news-tag">Formation</span>
+        <h2 class="news-title">Atelier de Restitution et Capitalisation</h2>
+        <div class="news-date">Août 2024</div>
+        <p>Présentation des rapports d'étape et partage d'outils méthodologiques avec les associations partenaires.</p>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <img src="imagyne-carousel-2.webp" class="news-img" alt="Désinformation">
+      <div class="news-content">
+        <span class="news-tag">Numérique</span>
+        <h2 class="news-title">Atelier Sensibilisation aux Infolox</h2>
+        <div class="news-date">Octobre 2024</div>
+        <p>Sessions d'éducation aux médias pour apprendre aux jeunes à identifier les fausses informations sur le web.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

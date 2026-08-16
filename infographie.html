@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infographies - Junior Yoni Tsango</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --rust: #0b6e4f; --cream: #f7f3ea; --ink: #1a1a1a; --muted: #6b6459; --radius: 14px; }
+  body { font-family:'Space Grotesk',sans-serif; background:var(--cream); color:var(--ink); margin:0; line-height:1.6; }
+  header { background:var(--ink); color:#fff; padding:2rem 5%; text-align:center; }
+  header a { color:var(--rust); text-decoration:none; font-weight:600; float:left; }
+  h1 { font-family:'Fraunces',serif; font-size:2rem; margin-top:1rem; }
+  .container { max-width:1100px; margin:3rem auto; padding:0 5%; }
+  .info-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:1.6rem; }
+
+  /* Carte infographie — curseur pointer, clic ouvre la lightbox */
+  .i-card { background:#fff; border-radius:var(--radius); overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,.05); cursor:pointer; transition:transform .3s,box-shadow .3s; }
+  .i-card:hover { transform:translateY(-4px); box-shadow:0 14px 36px rgba(0,0,0,.1); }
+  .i-img-wrap { aspect-ratio:16/9; overflow:hidden; }
+  .i-img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
+  .i-card:hover .i-img-wrap img { transform:scale(1.04); }
+  .i-content { padding:1rem; }
+  .i-title { font-weight:700; font-size:.95rem; margin-bottom:.3rem; }
+  .i-sub { font-size:.8rem; color:var(--muted); }
+
+  /* Carte PDF spéciale — lien direct */
+  .i-card-pdf { text-decoration:none; color:inherit; }
+
+  /* Lightbox */
+  .lightbox { display:none; position:fixed; inset:0; background:rgba(15,12,8,.93); z-index:300; align-items:center; justify-content:center; flex-direction:column; padding:1.5rem; }
+  .lightbox.active { display:flex; }
+  .lightbox img { max-width:92vw; max-height:78vh; border-radius:8px; object-fit:contain; }
+  .lightbox-caption { color:#f4ede1; margin-top:1.2rem; font-size:.9rem; text-align:center; max-width:600px; }
+  .lightbox-close { position:absolute; top:20px; right:28px; color:#fff; font-size:2.4rem; cursor:pointer; background:none; border:none; line-height:1; }
+  .lightbox-close:hover { color:var(--rust); }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="fondateur.html">← Retour à l'accueil</a>
+  <h1 style="clear:both;">Réalisations Infographiques</h1>
+  <p>Visuels de campagne, supports éditoriaux et publications</p>
+</header>
+
+<div class="container">
+  <div class="info-grid">
+
+    <!-- Livret PDF — hébergé localement, téléchargement direct -->
+    <!-- Remplace le lien Drive qui demandait des autorisations -->
+    <!-- Fichier à placer dans le même dossier que cette page : livret-capitalisation.pdf -->
+    <a href="livret-capitalisation.pdf" target="_blank" class="i-card i-card-pdf" title="Ouvrir le livret PDF">
+      <div class="i-img-wrap">
+        <img src="https://drive.google.com/thumbnail?id=1bikMCJjTICtVhW2e-BPlkriJucIihepj&sz=w400" alt="Livret de capitalisation">
+      </div>
+      <div class="i-content">
+        <div class="i-title">Livret de Capitalisation (PDF)</div>
+        <div class="i-sub">Mise en page éditoriale · Projet Citoyennes Engagées</div>
+      </div>
+    </a>
+
+    <div class="i-card" onclick="openLightbox('infog-16527.jpg','Mission de terrain : village de Mindzi · Citoyennes Engagées / ReFLeT')">
+      <div class="i-img-wrap"><img src="infog-16527.jpg" alt="Mission Mindzi" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">Mission de terrain : village de Mindzi</div>
+        <div class="i-sub">Citoyennes Engagées · ReFLeT</div>
+      </div>
+    </div>
+
+    <div class="i-card" onclick="openLightbox('infog-16526.jpg','Mission de terrain : village d\'Elarmilo · Citoyennes Engagées / ReFLeT')">
+      <div class="i-img-wrap"><img src="infog-16526.jpg" alt="Mission Elarmilo" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">Mission de terrain : village d'Elarmilo</div>
+        <div class="i-sub">Communication locale et communautaire</div>
+      </div>
+    </div>
+
+    <div class="i-card" onclick="openLightbox('infog-16528.jpg','Mission de terrain : Ngoumessi, Mitzic · Citoyennes Engagées / ReFLeT')">
+      <div class="i-img-wrap"><img src="infog-16528.jpg" alt="Mission Ngoumessi" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">Mission de terrain : Ngoumessi, Mitzic</div>
+        <div class="i-sub">Citoyennes Engagées · ReFLeT</div>
+      </div>
+    </div>
+
+    <div class="i-card" onclick="openLightbox('infog-16667.jpg','Le ménage, une notion de base et non une tâche genrée · Citoyennes Engagées')">
+      <div class="i-img-wrap"><img src="infog-16667.jpg" alt="Le ménage n'est pas genré" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">Visuel Campagne Égalité</div>
+        <div class="i-sub">Réseaux sociaux · Sensibilisation aux rôles de genre</div>
+      </div>
+    </div>
+
+    <div class="i-card" onclick="openLightbox('infog-16669.jpg','Sensibilisation numérique, oct. 2023 / mars 2024 · Citoyennes Engagées')">
+      <div class="i-img-wrap"><img src="infog-16669.jpg" alt="Sensibilisation numérique" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">Sensibilisation numérique, oct. 2023 / mars 2024</div>
+        <div class="i-sub">Citoyennes Engagées</div>
+      </div>
+    </div>
+
+    <div class="i-card" onclick="openLightbox('infog-16568.jpg','Site Citoyennes Engagées : renforcer le pouvoir des femmes')">
+      <div class="i-img-wrap"><img src="infog-16568.jpg" alt="Site Citoyennes Engagées" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">Site Citoyennes Engagées : renforcer le pouvoir des femmes</div>
+        <div class="i-sub">citoyennesengagees.org</div>
+      </div>
+    </div>
+
+    <div class="i-card" onclick="openLightbox('infog-16663.jpg','L\'amour ne fait pas mal : lutte contre les VBG · Citoyennes Engagées')">
+      <div class="i-img-wrap"><img src="infog-16663.jpg" alt="L'amour ne fait pas mal" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">L'amour ne fait pas mal : lutte contre les VBG</div>
+        <div class="i-sub">Citoyennes Engagées</div>
+      </div>
+    </div>
+
+    <div class="i-card" onclick="openLightbox('infog-16569.jpg','Plateforme Citoyennes Engagées : interface desktop')">
+      <div class="i-img-wrap"><img src="infog-16569.jpg" alt="Interface desktop" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">Plateforme Citoyennes Engagées : interface desktop</div>
+        <div class="i-sub">citoyennesengagees.org</div>
+      </div>
+    </div>
+
+    <div class="i-card" onclick="openLightbox('infog-16665.jpg','66% des victimes de violences physiques sont des femmes · Citoyennes Engagées')">
+      <div class="i-img-wrap"><img src="infog-16665.jpg" alt="66% violences" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">66% des victimes de violences physiques sont des femmes</div>
+        <div class="i-sub">Citoyennes Engagées</div>
+      </div>
+    </div>
+
+    <div class="i-card" onclick="openLightbox('infog-16570.jpg','Lancement officiel de citoyennesengagees.org, nov. 2022 · ReFLeT')">
+      <div class="i-img-wrap"><img src="infog-16570.jpg" alt="Lancement officiel" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">Lancement officiel de citoyennesengagees.org, nov. 2022</div>
+        <div class="i-sub">Citoyennes Engagées · ReFLeT</div>
+      </div>
+    </div>
+
+    <div class="i-card" onclick="openLightbox('infog-16633.jpg','Les cicatrices de la violence psychologique sont profondes · Citoyennes Engagées')">
+      <div class="i-img-wrap"><img src="infog-16633.jpg" alt="Violence psychologique" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">Les cicatrices de la violence psychologique sont profondes</div>
+        <div class="i-sub">Citoyennes Engagées</div>
+      </div>
+    </div>
+
+    <div class="i-card" onclick="openLightbox('infog-16679.jpg','Action Orientée Changement : participation politique des femmes · ReFLeT / UNOCA / 2023')">
+      <div class="i-img-wrap"><img src="infog-16679.jpg" alt="AOC participation politique" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">AOC : participation politique des femmes</div>
+        <div class="i-sub">ReFLeT · UNOCA · 2023</div>
+      </div>
+    </div>
+
+    <div class="i-card" onclick="openLightbox('infog-16674.jpg','Festival des Solidarités : présentation et actions · Festisol Gabon / ReFLeT')">
+      <div class="i-img-wrap"><img src="infog-16674.jpg" alt="Festisol présentation" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">Festival des Solidarités : présentation et actions</div>
+        <div class="i-sub">Festisol Gabon · ReFLeT</div>
+      </div>
+    </div>
+
+    <div class="i-card" onclick="openLightbox('infog-16673.jpg','Festisol, souvenirs et plaquette de présentation · Festisol Gabon')">
+      <div class="i-img-wrap"><img src="infog-16673.jpg" alt="Festisol souvenirs" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">Festisol, souvenirs et plaquette de présentation</div>
+        <div class="i-sub">Festisol Gabon</div>
+      </div>
+    </div>
+
+    <div class="i-card" onclick="openLightbox('infog-16566.jpg','Festisol 2022 : réinsertion des jeunes prisonniers · Festival des Solidarités / Gabon')">
+      <div class="i-img-wrap"><img src="infog-16566.jpg" alt="Réinsertion prisonniers" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">Festisol 2022 : réinsertion des jeunes prisonniers</div>
+        <div class="i-sub">Festival des Solidarités · Gabon</div>
+      </div>
+    </div>
+
+    <div class="i-card" onclick="openLightbox('infog-16685.webp','Approche genre & harcèlement en milieu professionnel · ReFLeT / Société Bouzguenda Frères')">
+      <div class="i-img-wrap"><img src="infog-16685.webp" alt="Approche genre harcèlement" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">Approche genre & harcèlement en milieu professionnel</div>
+        <div class="i-sub">ReFLeT · Société Bouzguenda Frères</div>
+      </div>
+    </div>
+
+    <div class="i-card" onclick="openLightbox('infog-16682.jpg','Partenaires de mise en œuvre : ReFLeT, ID, UNOCA · AOC / 2023')">
+      <div class="i-img-wrap"><img src="infog-16682.jpg" alt="Partenaires AOC" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">Partenaires de mise en œuvre : ReFLeT, ID, UNOCA</div>
+        <div class="i-sub">AOC · 2023</div>
+      </div>
+    </div>
+
+    <div class="i-card" onclick="openLightbox('infog-16544.jpg','Causerie-débat : faut-il plus de femmes engagées en politique ? · ReFLeT / UNOCA')">
+      <div class="i-img-wrap"><img src="infog-16544.jpg" alt="Causerie-débat femmes politique" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">Causerie-débat : faut-il plus de femmes en politique ?</div>
+        <div class="i-sub">ReFLeT · UNOCA</div>
+      </div>
+    </div>
+
+    <div class="i-card" onclick="openLightbox('infog-16540.jpg','Causerie-débat jour 1, sensibilisation au genre (nov. 2023) · ReFLeT / UNOCA')">
+      <div class="i-img-wrap"><img src="infog-16540.jpg" alt="Causerie-débat jour 1" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">Causerie-débat jour 1, sensibilisation au genre (nov. 2023)</div>
+        <div class="i-sub">ReFLeT · UNOCA</div>
+      </div>
+    </div>
+
+    <div class="i-card" onclick="openLightbox('infog-16529.jpg','Assemblée générale ReFLeT, avril 2024 · Réseau Femme Lève-Toi')">
+      <div class="i-img-wrap"><img src="infog-16529.jpg" alt="AG ReFLeT 2024" loading="lazy"></div>
+      <div class="i-content">
+        <div class="i-title">Assemblée générale ReFLeT, avril 2024</div>
+        <div class="i-sub">Réseau Femme Lève-Toi</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+  <p class="lightbox-caption" id="lightbox-caption"></p>
+</div>
+
+<script>
+  function openLightbox(src, caption) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-caption').textContent = caption || '';
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(e) {
+    if (e && e.target !== e.currentTarget && e.target.id !== 'lightbox') return;
+    document.getElementById('lightbox').classList.remove('active');
+    document.getElementById('lightbox-img').src = '';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+</body>
+</html>

@@ -51,7 +51,7 @@
 
   nav#mainNav {
     position:fixed; top:0; left:0; right:0; z-index:100;
-    background:rgba(255,255,255,.95); backdrop-filter:blur(14px);
+    background:#ffffff;
     border-bottom:1px solid var(--lilac);
     padding:0 5%; display:flex; align-items:center; justify-content:space-between;
     height:64px; transition:box-shadow .3s;
@@ -61,14 +61,14 @@
   .nav-logo span { color:var(--magenta); }
   .nav-links { display:flex; gap:1.2rem; list-style:none; flex-wrap:nowrap; align-items:center; }
   .nav-links a { text-decoration:none; font-size:.75rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--violet); position:relative; padding-bottom:4px; transition:color .3s; white-space:nowrap; }
-  .nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--magenta); transition:width .35s cubic-bezier(.22,1,.36,1); }
+  .nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--violet); transition:width .35s cubic-bezier(.22,1,.36,1); }
   .nav-links a:hover { color:var(--navy); }
   .nav-links a:hover::after { width:100%; }
   .nav-founder-link {
     background:var(--navy); color:#fff !important; padding:.5rem 1.1rem !important;
     border-radius:999px; font-weight:700 !important;
   }
-  .nav-founder-link:hover { background:var(--magenta); }
+  .nav-founder-link:hover { background:var(--violet); }
   .nav-founder-link::after { display:none; }
 
   .nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; }
@@ -79,7 +79,7 @@
 
   .btn { display:inline-block; padding:.85rem 2.1rem; border-radius:var(--radius-sm); font-family:'Montserrat',sans-serif; font-weight:700; font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; border:none; cursor:pointer; transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s,background .2s; }
   .btn-primary { background:var(--magenta); color:var(--white); box-shadow:0 6px 24px rgba(168,85,160,.35); }
-  .btn-primary:hover { background:#8b4090; box-shadow:0 12px 32px rgba(168,85,160,.45); transform:translateY(-2px); }
+  .btn-primary:hover { background:#002366; box-shadow:0 12px 32px rgba(0,35,102,.35); transform:translateY(-2px); }
   .btn-outline { background:transparent; color:var(--white); border:2px solid rgba(255,255,255,.35); }
   .btn-outline:hover { border-color:var(--white); background:rgba(255,255,255,.08); }
   .btn-outline-dark { background:transparent; color:var(--navy); border:2px solid var(--violet); }
@@ -120,7 +120,7 @@
     .nav-hamburger { display:flex; }
     .nav-links {
       display:none; position:fixed; top:64px; left:0; right:0;
-      background:rgba(255,255,255,.98); backdrop-filter:blur(14px);
+      background:#ffffff;
       flex-direction:column; gap:0; padding:0;
       border-bottom:2px solid var(--lilac);
       box-shadow:0 8px 30px rgba(43,47,90,.12);
@@ -154,7 +154,9 @@
 <body>
 
 <nav id="mainNav">
-  <a href="index.html" class="nav-logo">IMAG<span>Y</span>NE</a>
+  <a href="index.html" class="nav-logo">
+    <img src="logo-imagyne.webp" alt="IMAGYNE" style="height:40px;width:auto;display:block;">
+  </a>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
     <span></span><span></span><span></span>
   </button>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les ONG communiquent trop pour leurs bailleurs, pas assez pour leurs bénéficiaires, par Junior Yoni Tsango</title>
+<meta name="description" content="Une organisation qui ne rend de comptes qu'à ceux qui la financent finit par ne plus vraiment travailler pour ceux qu'elle sert. Analyse de Junior Yoni Tsango.">
+<meta property="og:title" content="Les ONG communiquent trop pour leurs bailleurs, pas assez pour leurs bénéficiaires">
+<meta property="og:description" content="Une organisation qui ne rend de comptes qu'à ceux qui la financent finit par ne plus vraiment travailler pour ceux qu'elle sert.">
+<meta property="og:image" content="https://imagyne241.com/photo-yoni.jpg">
+<meta property="og:url" content="https://imagyne241.com/article-03-ong-bailleurs-beneficiaires.html">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QM3TPMKJR7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QM3TPMKJR7');
+</script>
+<style>
+  :root {
+    --navy: #1a1a1a;
+    --magenta: #0b6e4f;
+    --violet: #d8a13a;
+    --lavender: #cfc7ba;
+    --lilac: #ddd2b8;
+    --off-white: #ece4d3;
+    --white: #f7f3ea;
+    --text: #1a1a1a;
+    --muted: #6b6459;
+    --radius: 16px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Space Grotesk',sans-serif; background:var(--white); color:var(--text); line-height:1.85; }
+
+  nav {
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(255,255,255,.95); backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--lilac);
+    padding:0 5%; display:flex; align-items:center; justify-content:space-between;
+    height:64px;
+  }
+  .nav-logo { font-family:'Fraunces',serif; font-weight:900; font-size:1.3rem; color:var(--navy); text-decoration:none; white-space:nowrap; }
+  .nav-logo span { color:var(--magenta); }
+  .nav-back { display:inline-flex; align-items:center; gap:.5rem; font-family:'Fraunces',serif; font-size:.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--violet); text-decoration:none; transition:color .2s; }
+  .nav-back:hover { color:var(--magenta); }
+
+  .article-hero {
+    background:linear-gradient(135deg,var(--navy) 0%,var(--violet) 100%);
+    padding:110px 5% 55px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .article-hero::before {
+    content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;
+    background:url("data:image/svg+xml,%3Csvg width='300' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='t' x='0' y='0' width='24' height='24' patternUnits='userSpaceOnUse'%3E%3Cpolygon points='12,2 22,22 2,22' fill='none' stroke='rgba(255,255,255,0.08)' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='300' height='300' fill='url(%23t)'/%3E%3C/svg%3E");
+  }
+  .article-tag { display:inline-block; background:var(--magenta); color:#fff; font-family:'Fraunces',serif; font-size:.7rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; padding:.4rem 1.2rem; border-radius:999px; margin-bottom:1.5rem; position:relative; }
+  .article-hero h1 { font-family:'Fraunces',serif; font-weight:900; font-size:clamp(1.5rem,3.5vw,2.6rem); color:#fff; line-height:1.2; max-width:780px; margin:0 auto 1.2rem; letter-spacing:-.02em; position:relative; }
+  .article-hero h1 em { font-style:italic; color:var(--lavender); }
+  .article-byline { color:var(--lavender); font-size:.88rem; font-style:italic; position:relative; }
+  .article-byline strong { color:#fff; font-style:normal; font-family:'Fraunces',serif; }
+
+  .article-wrap { max-width:700px; margin:0 auto; padding:4rem 5% 6rem; }
+
+  .article-intro {
+    font-size:1.12rem; font-weight:600; color:var(--navy); line-height:1.75;
+    border-left:4px solid var(--magenta); padding-left:1.4rem;
+    margin-bottom:2.5rem; font-family:'Space Grotesk',sans-serif;
+  }
+
+  .article-wrap p { margin-bottom:1.7rem; font-size:1.05rem; color:#2d2d2d; text-align:justify; text-justify:inter-word; }
+  .article-wrap p strong { color:var(--navy); }
+  .article-wrap p em { font-style:italic; color:var(--violet); }
+
+  h2 { font-family:'Fraunces',serif; font-weight:800; font-size:1.25rem; color:var(--navy); margin:2.8rem 0 1rem; letter-spacing:-.01em; }
+
+  blockquote {
+    background:var(--off-white); border-left:4px solid var(--magenta);
+    border-radius:0 var(--radius) var(--radius) 0;
+    padding:1.4rem 1.6rem; margin:2.2rem 0;
+    font-style:italic; color:var(--navy); font-size:1.05rem; line-height:1.75;
+  }
+  blockquote cite { display:block; margin-top:.7rem; font-size:.82rem; font-style:normal; color:var(--muted); font-family:'Fraunces',serif; font-weight:600; }
+
+  .article-divider { width:48px; height:3px; background:var(--magenta); border-radius:3px; margin:2.5rem 0; }
+
+  .article-img {
+    width:100%; border-radius:var(--radius);
+    overflow:hidden; margin:2.2rem 0;
+    box-shadow:0 12px 40px rgba(43,47,90,.15);
+  }
+  .article-img img { width:100%; display:block; object-fit:cover; max-height:420px; }
+  .article-img figcaption {
+    padding:.7rem 1rem; background:var(--off-white);
+    font-size:.8rem; color:var(--muted); font-style:italic;
+    font-family:'Space Grotesk',sans-serif;
+  }
+
+  .author-box {
+    background:var(--off-white); border:1px solid var(--lilac);
+    border-radius:var(--radius); padding:1.8rem;
+    display:flex; gap:1.4rem; align-items:flex-start;
+    margin-top:3.5rem;
+  }
+  .author-photo { width:72px; height:72px; border-radius:50%; object-fit:cover; object-position:top; border:3px solid var(--lilac); flex-shrink:0; }
+  .author-name { font-family:'Fraunces',serif; font-weight:800; font-size:.95rem; color:var(--navy); margin-bottom:.3rem; }
+  .author-title { font-size:.82rem; color:var(--magenta); font-style:italic; margin-bottom:.6rem; }
+  .author-bio { font-size:.85rem; color:var(--muted); line-height:1.65; font-family:'Space Grotesk',sans-serif; }
+
+  .article-nav { display:flex; justify-content:space-between; align-items:center; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--lilac); }
+  .article-nav a { display:inline-flex; align-items:center; gap:.5rem; font-family:'Fraunces',serif; font-size:.8rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--navy); text-decoration:none; transition:color .2s; }
+  .article-nav a:hover { color:var(--magenta); }
+
+  footer { background:var(--navy); color:var(--lavender); text-align:center; padding:2rem 5%; font-size:.82rem; }
+  footer strong { color:#fff; font-family:'Fraunces',serif; }
+  footer em { color:var(--magenta); font-style:italic; }
+
+  @media (max-width:600px) {
+    .author-box { flex-direction:column; }
+    .article-nav { flex-direction:column; gap:1rem; text-align:center; }
+  }
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="fondateur.html" class="nav-logo" style="color:#a8a196;">Junior Yoni <span style="color:var(--magenta);">Tsango</span></a>
+  <a href="articles.html" class="nav-back">← Retour aux articles</a>
+</nav>
+
+<div class="article-hero">
+  <span class="article-tag">Communication · Analyse</span>
+  <h1>Les ONG communiquent trop pour leurs bailleurs,<br><em>pas assez pour leurs bénéficiaires.</em></h1>
+  <p class="article-byline">Par <strong>Junior Yoni Tsango</strong> · Septembre 2026 · 7 min de lecture</p>
+</div>
+
+<div class="article-wrap">
+
+  <p class="article-intro">
+    J'étais présent à la restitution d'un projet de sensibilisation mené dans un arrondissement de Libreville. Le rapport final était impeccable. Photos bien cadrées, données bien présentées, graphiques lisibles, résumé exécutif en deux langues. En discutant avec deux femmes du quartier concerné à la fin de la session, j'ai posé une question simple. Vous saviez que ce projet existait ? L'une d'elles a haussé les épaules. <em>« On a entendu qu'il y avait eu quelque chose. On ne sait pas trop ce que c'était. »</em>
+  </p>
+
+  <p>
+    Ce moment m'est resté. Il ne décrit pas une exception. Il décrit une règle silencieuse que personne n'a formulée noir sur blanc dans le monde des ONG, mais que tout le monde applique : <strong>communique bien vers le haut, communique peu vers le bas.</strong>
+  </p>
+
+  <figure class="article-img">
+    <img src="article-03-image-1.jpg" alt="Réunion communautaire dans un quartier de Libreville" loading="lazy">
+    <figcaption>Une restitution de projet bien documentée ne remplace pas une communication réelle avec les communautés concernées.</figcaption>
+  </figure>
+
+  <h2>Le rapport annuel comme miroir déformant</h2>
+
+  <p>
+    Je veux être précis sur ce que je critique, parce que ce n'est pas la compétence des équipes. Les ONG produisent souvent une communication sérieuse : rapports d'activité structurés, bilans financiers détaillés, newsletters pour les partenaires, vidéos de terrain pour les campagnes de levée de fonds. Je connais des communicants qui travaillent dans des contraintes réelles de délai et de budget.
+  </p>
+
+  <p>
+    Ce que je questionne, c'est vers qui cette communication pointe. Elle pointe vers les bailleurs de fonds, vers les partenaires institutionnels, vers les médias internationaux, vers les donateurs potentiels. C'est logique : c'est le bailleur qui finance, qui évalue, qui reconduit ou coupe le financement. <strong>On optimise pour celui qui tient les cordons de la bourse.</strong> Ce réflexe est humain, compréhensible, et c'est exactement pourquoi il pose problème.
+  </p>
+
+  <h2>La redevabilité à deux vitesses</h2>
+
+  <p>
+    Le mot <em>redevabilité</em> revient beaucoup dans les cercles du développement international. En anglais, <em>accountability</em>. L'idée est simple : une organisation qui reçoit des financements pour agir au bénéfice de populations doit rendre des comptes. La vraie question, c'est à qui.
+  </p>
+
+  <p>
+    Dans la pratique, la réponse est presque toujours la même : au bailleur. La redevabilité envers le bailleur est contractuelle, chiffrée, vérifiable, sanctionnée. Si le rapport n'est pas remis dans les délais, si les indicateurs ne sont pas atteints, les conséquences sont concrètes. La redevabilité envers les bénéficiaires, elle, est morale. Réelle, importante, mais presque jamais inscrite dans un contrat. Quand les délais pressent et que les ressources manquent, c'est la première à partir.
+  </p>
+
+  <blockquote>
+    « Pendant trop longtemps, les communautés vulnérables ont été considérées comme des bénéficiaires de l'aide humanitaire plutôt que comme des participants actifs à leur propre avenir. »
+    <cite>Fédération Internationale de la Croix-Rouge et du Croissant-Rouge</cite>
+  </blockquote>
+
+  <p>
+    Ce n'est la faute de personne en particulier. C'est un système qui s'entretient et qui produit, année après année, le même résultat : des populations qui vivent à côté de projets censés les concerner, sans jamais vraiment en être informées.
+  </p>
+
+  <h2>Ce que j'ai observé sur le terrain</h2>
+
+  <p>
+    Ce que je décris, ce n'est pas une théorie. C'est ce que j'ai observé de mission en mission au Gabon et en Afrique centrale.
+  </p>
+
+  <p>
+    Des communautés qui apprennent l'existence d'un programme les concernant par un tiers, souvent par hasard, parfois quand le projet est déjà terminé. Des bénéficiaires qui ne comprennent pas pourquoi une équipe disparaît du jour au lendemain, parce que personne ne leur a expliqué que les financements avaient une durée. Des villages qui voient passer des équipes de terrain pendant des mois sans jamais avoir reçu, dans leur langue, la réponse à une question pourtant basique : <em>pourquoi vous êtes là, et qu'est-ce que ça va changer pour nous ?</em>
+  </p>
+
+  <p>
+    La communication d'impact, celle qui informe et implique vraiment les communautés concernées, reste le parent pauvre du budget dans la quasi-totalité des projets que j'ai croisés. Elle est rarement planifiée, rarement budgétisée. Quand elle existe, c'est souvent une case à cocher.
+  </p>
+
+  <figure class="article-img">
+    <img src="article-03-image-2.jpg" alt="Femmes participant à une séance de sensibilisation communautaire" loading="lazy">
+    <figcaption>Informer les communautés de ce qui les concerne directement : un acte de communication qui reste trop souvent négligé.</figcaption>
+  </figure>
+
+  <div class="article-divider"></div>
+
+  <h2>Communiquer sur l'impact, ou communiquer pour l'image ?</h2>
+
+  <p>
+    Il y a la communication <em>autour</em> de l'impact : un film de trois minutes sur les bénéficiaires, posté sur la page Instagram du siège à Paris ou à Genève. Les images sont belles, les visages touchants, les chiffres s'affichent en blanc sur fond sombre à la fin. Ce contenu raconte une histoire, mais il ne s'adresse pas aux bénéficiaires. <strong>Ils y apparaissent comme des sujets, rarement comme des destinataires.</strong>
+  </p>
+
+  <p>
+    La communication <em>d'impact</em>, c'est autre chose. C'est partir du principe que les personnes concernées par une action ont le droit de comprendre ce qui se passe, d'y réagir, de s'y reconnaître ou de la contester. La première produit de la visibilité pour l'organisation. La seconde produit de la confiance avec les communautés.
+  </p>
+
+  <blockquote>
+    « Une organisation qui ne rend de comptes qu'à ceux qui la financent finit par ne plus vraiment travailler pour ceux qu'elle sert. »
+    <cite>Junior Yoni Tsango</cite>
+  </blockquote>
+
+  <p>
+    La vraie communication d'impact ne documente pas seulement ce qu'une ONG a fait. Elle informe les bénéficiaires de leurs droits, de ce à quoi ils peuvent prétendre, de ce que le projet prévoit concrètement pour eux. Elle crée des canaux pour que les communautés puissent réagir, poser des questions, signaler des problèmes. Elle rend des comptes vers les personnes au nom desquelles elle agit, pas uniquement vers celles qui signent les chèques.
+  </p>
+
+  <h2>Le coût silencieux de cette asymétrie</h2>
+
+  <p>
+    Quand une organisation ne communique pas avec les communautés qu'elle sert, elle abîme quelque chose de profond : la confiance.
+  </p>
+
+  <p>
+    J'ai rencontré des populations qui regardent les ONG avec une méfiance tranquille, construite au fil des années. Pas une hostilité ouverte. Une distance polie. Le sentiment que ces organisations font ce qu'elles ont à faire, mais que ça ne les concerne pas vraiment. Que les projets passent comme passent les saisons, sans explication, sans qu'on leur demande grand-chose.
+  </p>
+
+  <p>
+    Cette méfiance a un coût réel. Les communautés s'impliquent moins dans ce dont elles se sentent exclues, ce qui rend les projets moins efficaces. Les organisations perdent des retours qui amélioreraient leur travail. Et dans l'imaginaire local s'installe l'idée que le développement est quelque chose qui vient de l'extérieur, passe, et repart sans laisser grand-chose.
+  </p>
+
+  <h2>Ce que changer demanderait</h2>
+
+  <p>
+    Je ne cherche pas la perfection ici. Le secteur humanitaire et le secteur du développement travaillent dans des contraintes réelles : équipes surchargées, délais courts, budgets de communication souvent les premiers rognés.
+  </p>
+
+  <p>
+    Mais changer ne demande pas forcément plus de moyens. Ça demande une décision prise dès la conception du projet : une partie de la communication sera destinée aux bénéficiaires, pas uniquement aux bailleurs. Des supports adaptés au contexte local : réunions communautaires, radio locale, affichage, messages vocaux là où l'écrit ne suffit pas. Une traduction des grandes lignes du projet dans une langue que les gens parlent vraiment. <strong>Et rendre compte aux communautés avec le même soin qu'au bailleur, même si personne ne le vérifie dans un audit.</strong>
+  </p>
+
+  <blockquote>
+    « La communication avec les communautés est plus efficace lorsqu'elle leur appartient, lorsque les habitants ont leur mot à dire depuis le début. »
+    <cite>Oxfam / ReliefWeb</cite>
+  </blockquote>
+
+  <p>
+    La communication d'impact commence au moment où on décide que les bénéficiaires ne sont pas seulement le sujet de nos récits, mais leur premier destinataire.
+  </p>
+
+  <!-- AUTHOR -->
+  <div class="author-box">
+    <img src="photo-yoni.jpg" alt="Junior Yoni Tsango" class="author-photo"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div style="display:none;width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#1a1a1a,#0b6e4f);align-items:center;justify-content:center;color:#fff;font-size:1.4rem;flex-shrink:0;">👤</div>
+    <div>
+      <div class="author-name">Junior Yoni Tsango</div>
+      <div class="author-title">Communicateur & Acteur Civique · Fondateur d'IMAGYNE</div>
+      <p class="author-bio">Basé au Gabon, Junior accompagne depuis plus de sept ans des ONG, institutions et organisations communautaires dans leur stratégie de communication. Il croit qu'une organisation qui ne rend de comptes qu'à ceux qui la financent finit par ne plus vraiment travailler pour ceux qu'elle sert.</p>
+    </div>
+  </div>
+
+  <div class="article-nav">
+    <a href="articles.html">← Tous les articles</a>
+    <a href="fondateur.html">Voir le portfolio →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 <strong>IMAGYNE</strong>, <em>colorons votre quotidien</em></p>
+</footer>
+
+</body>
+</html>
